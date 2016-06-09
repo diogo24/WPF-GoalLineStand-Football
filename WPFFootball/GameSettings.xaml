@@ -1,0 +1,590 @@
+﻿<Window x:Class="GameSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WPFFootball"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="GameSettings"
+        Width="1200"
+        Height="800"
+        WindowState="Maximized"
+        mc:Ignorable="d">
+    <Grid x:Name="LgSettingsGrid">
+        <Grid.Background>
+            <ImageBrush x:Name="LgSettingsGridBG" Opacity="0.7" />
+        </Grid.Background>
+        <TabControl x:Name="LgSettingsTabControl"
+                    Width="Auto"
+                    Height="Auto"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+            <TabControl.Background>
+                <ImageBrush x:Name="LgSettingsTabControlBG" Opacity="0.7" />
+            </TabControl.Background>
+            <TabItem x:Name="TabVisual"
+                     Width="Auto"
+                     Height="Auto"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     FontFamily="Motorwerk Bold"
+                     FontSize="14"
+                     Header="Visual Settings">
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="DisplayLbl"
+                           Width="120"
+                           Height="25"
+                           Margin="0,15,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Display Mode:" />
+                    <ComboBox x:Name="Display"
+                              Width="120"
+                              Height="20"
+                              Margin="0,18,0,0"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Text="Display Mode">
+                        <ComboBoxItem Name="Maximized">Maximized</ComboBoxItem>
+                        <ComboBoxItem Name="Windowed">Windowed</ComboBoxItem>
+                    </ComboBox>
+                    <Button x:Name="Accept"
+                            Width="Auto"
+                            Height="20"
+                            Margin="-235,80,0,0"
+                            HorizontalAlignment="Left"
+                            Click="Accept_OnClick"
+                            Content="Accept Changes"
+                            FontSize="14">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0" Color="#FFEEEEEE" />
+                                <GradientStop Offset="1" Color="#FF1F4BC1" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+
+            </TabItem>
+            <TabItem x:Name="TabSettings"
+                     Width="Auto"
+                     Height="Auto"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     FontFamily="Motorwerk Bold"
+                     FontSize="14"
+                     Header="League Settings">
+                <StackPanel Margin="0,20,0,0" HorizontalAlignment="Left">
+                    <Label Content="Starting Year:" />
+                    <TextBox x:Name="StartingYear"
+                             Width="50"
+                             Height="Auto"
+                             Margin="120,-22,0,0"
+                             HorizontalAlignment="Right"
+                             TextChanged="StartingYear_TextChanged" />
+                    <Label Content="League Rules" />
+                    <ComboBox x:Name="LeagueRules"
+                              Width="150"
+                              Margin="120,-22,0,0"
+                              HorizontalAlignment="Right"
+                              SelectionChanged="LeagueRules_SelectionChanged">
+                        <ComboBoxItem Content="NFL Rules" Tag="NFL Rules" />
+                        <ComboBoxItem Content="CFL Rules" Tag="CFL Rules" />
+                        <ComboBoxItem Content="NCAA Rules" Tag="NCAA Rules" />
+                        <ComboBoxItem Content="Arena Rules" Tag="Arena Rules" />
+                    </ComboBox>
+                    <Label Margin="0,10,0,0" Content="League Type:" />
+                    <ComboBox x:Name="LeagueType"
+                              Width="150"
+                              Height="Auto"
+                              Margin="120,-22,0,0"
+                              HorizontalAlignment="Right"
+                              SelectionChanged="LeagueType_SelectionChanged">
+                        <ComboBoxItem x:Name="Career"
+                                      Content="Career Simulation"
+                                      Tag="Career" />
+                        <ComboBoxItem x:Name="SingleSeason"
+                                      Content="Single Season"
+                                      Tag="Single Season" />
+                        <ComboBoxItem x:Name="QuickGame"
+                                      Content="Quick Game"
+                                      Tag="Quick Game" />
+                    </ComboBox>
+                    <Label Margin="0,10,0,0" Content="Roster Size:" />
+                    <ComboBox x:Name="RosterSize"
+                              Width="110"
+                              Height="Auto"
+                              Margin="160,-22,0,0"
+                              HorizontalAlignment="Right"
+                              SelectionChanged="RosterSize_SelectionChanged">
+                        <ComboBoxItem Content="60" Tag="60" />
+                        <ComboBoxItem Content="59" Tag="59" />
+                        <ComboBoxItem Content="58" Tag="58" />
+                        <ComboBoxItem Content="57" Tag="57" />
+                        <ComboBoxItem Content="56" Tag="56" />
+                        <ComboBoxItem Content="55" Tag="55" />
+                        <ComboBoxItem Content="54" Tag="54" />
+                        <ComboBoxItem Content="53 NFL" Tag="53" />
+                        <ComboBoxItem Content="52" Tag="52" />
+                        <ComboBoxItem Content="51" Tag="51" />
+                        <ComboBoxItem Content="50" Tag="50" />
+                        <ComboBoxItem Content="49" Tag="49" />
+                        <ComboBoxItem Content="48" Tag="48" />
+                        <ComboBoxItem Content="47" Tag="47" />
+                        <ComboBoxItem Content="46" Tag="46" />
+                    </ComboBox>
+                    <Label Margin="0,10,0,0" Content="GameDay Inactive #:" />
+                    <ComboBox x:Name="GameInactives"
+                              Width="90"
+                              Height="Auto"
+                              Margin="180,-22, 0, 0"
+                              HorizontalAlignment="Right"
+                              SelectionChanged="GameInactives_SelectionChanged">
+                        <ComboBoxItem Content="14" Tag="14" />
+                        <ComboBoxItem Content="13" Tag="13" />
+                        <ComboBoxItem Content="12" Tag="12" />
+                        <ComboBoxItem Content="11" Tag="11" />
+                        <ComboBoxItem Content="10" Tag="10" />
+                        <ComboBoxItem Content="9" Tag="9" />
+                        <ComboBoxItem Content="8" Tag="8" />
+                        <ComboBoxItem Content="7 NFL" Tag="7" />
+                        <ComboBoxItem Content="6" Tag="6" />
+                        <ComboBoxItem Content="5" Tag="5" />
+                        <ComboBoxItem Content="4" Tag="4" />
+                        <ComboBoxItem Content="3" Tag="3" />
+                        <ComboBoxItem Content="2" Tag="2" />
+                        <ComboBoxItem Content="1" Tag="1" />
+                        <ComboBoxItem Content="0" Tag="0" />
+                    </ComboBox>
+                    <Label Margin="0,10,0,0" Content="Practice Squad Size:" />
+                    <ComboBox x:Name="PracSquad"
+                              Width="130"
+                              Margin="150,-22,0,0"
+                              HorizontalAlignment="Right"
+                              SelectionChanged="PracSquad_OnSelectionChanged">
+                        <ComboBoxItem Content="0" Tag="0" />
+                        <ComboBoxItem Content="1" Tag="1" />
+                        <ComboBoxItem Content="2" Tag="2" />
+                        <ComboBoxItem Content="3" Tag="3" />
+                        <ComboBoxItem Content="4" Tag="4" />
+                        <ComboBoxItem Content="5" Tag="5" />
+                        <ComboBoxItem Content="6" Tag="6" />
+                        <ComboBoxItem Content="7" Tag="7" />
+                        <ComboBoxItem Content="8 NFL" Tag="8" />
+                        <ComboBoxItem Content="9" Tag="9" />
+                        <ComboBoxItem Content="10" Tag="10" />
+                        <ComboBoxItem Content="11" Tag="11" />
+                        <ComboBoxItem Content="12" Tag="12" />
+                        <ComboBoxItem Content="13" Tag="13" />
+                        <ComboBoxItem Content="14" Tag="14" />
+                        <ComboBoxItem Content="15" Tag="15" />
+                    </ComboBox>
+                    <Label Margin="0,10,0,0" Content="OT Format:" />
+                    <ComboBox x:Name="OTFormat"
+                              Width="130"
+                              Height="Auto"
+                              Margin="140,-22, 0, 0"
+                              HorizontalAlignment="Right"
+                              SelectionChanged="OTFormat_SelectionChanged">
+                        <ComboBoxItem Content="Sudden Death" Tag="Sudden Death" />
+                        <ComboBoxItem Content="College Rules" Tag="College OT" />
+                        <ComboBoxItem Content="NFL Rules" Tag="NFL OT" />
+                        <ComboBoxItem Content="No Sudden Death" Tag="No Sudden Death" />
+                        <ComboBoxItem Content="No Overtime" Tag="No Overtime" />
+                    </ComboBox>
+
+                    <Label Margin="0,10,0,0" Content="Field Type" />
+                    <ComboBox x:Name="FieldType"
+                              Width="100"
+                              Margin="170,-20,0,0"
+                              HorizontalAlignment="Right"
+                              SelectionChanged="FieldType_SelectionChanged">
+                        <ComboBoxItem Content="NFL Field" Tag="NFL Field" />
+                        <ComboBoxItem Content="CFL Field" Tag="CFL Field" />
+                        <ComboBoxItem Content="College Field" Tag="College Field" />
+                        <ComboBoxItem Content="Arena Lg Field" Tag="Arena League Field" />
+                    </ComboBox>
+                    <Label Margin="0,10,0,0"
+                           HorizontalAlignment="Left"
+                           Content="Penalties" />
+                    <Slider x:Name="PenaltySlider"
+                            Width="140"
+                            Height="Auto"
+                            Margin="30,-20,0,0"
+                            IsSnapToTickEnabled="True"
+                            Maximum="100"
+                            TickPlacement="BottomRight" />
+                    <TextBox x:Name="PenaltyValue"
+                             Width="40"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             FontSize="18"
+                             Text="{Binding ElementName=PenaltySlider,
+                                            Path=Value,
+                                            UpdateSourceTrigger=PropertyChanged}"
+                             TextAlignment="Center"
+                             TextChanged="PenaltyValue_TextChanged" />
+                    <Label Content="# of Teams" />
+                    <TextBox x:Name="NumTeams"
+                             Width="40"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             FontSize="18"
+                             TextAlignment="Center"
+                             TextChanged="NumTeams_TextChanged" />
+                    <Label Content="# of Conferences" />
+                    <TextBox x:Name="NumConf"
+                             Width="40"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             FontSize="18"
+                             TextAlignment="Center"
+                             TextChanged="NumConf_TextChanged" />
+                    <Label Content="# of Divsions" />
+                    <TextBox x:Name="NumDivs"
+                             Width="40"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             FontSize="18"
+                             TextAlignment="Center"
+                             TextChanged="NumDivs_TextChanged" />
+                    <CheckBox x:Name="ChkBxFantasyDraft"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left"
+                              Checked="ChkBxFantasyDraft_Checked"
+                              Content="Start With Fantasy Draft?"
+                              Unchecked="ChkBxFantasyDraft_Unchecked" />
+                    <CheckBox x:Name="ChkBxFired"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left"
+                              Checked="ChkBxFired_Checked"
+                              Content="User Can be Fired"
+                              Unchecked="ChkBxFired_Unchecked" />
+                    <CheckBox x:Name="ChkBxExpansion"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left"
+                              Checked="ChkBxExpansion_Checked"
+                              Content="Allow Expansion?"
+                              Unchecked="ChkBxExpansion_Unchecked" />
+                    <CheckBox x:Name="ChkBxRelocation"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left"
+                              Checked="ChkBxRelocation_Checked"
+                              Content="Allow Relocation?"
+                              Unchecked="ChkBxRelocation_Unchecked" />
+                    <CheckBox x:Name="ChkBxAllowFA"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left"
+                              Checked="ChkBxAllowFA_Checked"
+                              Content="Allow Free Agency?"
+                              Unchecked="ChkBxAllowFA_Unchecked" />
+                    <CheckBox x:Name="ChkBxCollegeDraft"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left"
+                              Checked="ChkBxCollegeDraft_Checked"
+                              Content="Allow Yearly College Draft?"
+                              Unchecked="ChkBxCollegeDraft_Unchecked" />
+                    <Label Margin="0,10,0,0"
+                           HorizontalAlignment="Left"
+                           Content="Number Of Draft Rounds" />
+                    <TextBox x:Name="NumDraftRounds"
+                             Width="30"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             Text="7"
+                             TextAlignment="Center"
+                             TextChanged="NumDraftRounds_TextChanged" />
+                    <CheckBox x:Name="ChkBxSupDraft"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left"
+                              Checked="ChkBxSupDraft_Checked"
+                              Content="Hold Supplemental Draft?"
+                              Unchecked="ChkBxSupDraft_Unchecked" />
+                    <CheckBox x:Name="ChkBxCompPicks"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left"
+                              Checked="ChkBxCompPicks_Checked"
+                              Content="Compensatory Picks for FA Losses?"
+                              Unchecked="ChkBxCompPicks_Unchecked" />
+                    <Button x:Name="AcceptBtn"
+                            Width="100"
+                            Height="Auto"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Left"
+                            Click="LgFinAcceptBtn_Click"
+                            Content="Accept"
+                            Style="{DynamicResource SimpleButton}" />
+                    <Button x:Name="DefaultBtn"
+                            Width="125"
+                            Height="Auto"
+                            Margin="80,-23,0,0"
+                            Click="LgFinResetBtn_Click"
+                            Content="Reset Default"
+                            Style="{DynamicResource SimpleButton}" />
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="TabFinances"
+                     Width="Auto"
+                     Height="Auto"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     FontFamily="Motorwerk Bold"
+                     FontSize="14"
+                     GotFocus="TabFinances_GotFocus"
+                     Header="League Finances">
+                <StackPanel Margin="0,20,0,0" HorizontalAlignment="Left">
+                    <CheckBox x:Name="ChkBxSalCap"
+                              Checked="ChkBxSalCap_Checked"
+                              Content="Enable Salary Cap?"
+                              Unchecked="ChkBxSalCap_Unchecked" />
+                    <Label Content="Salary Cap Type:" />
+                    <ComboBox x:Name="SalCapType"
+                              Width="120"
+                              Margin="260,-25,0,0"
+                              HorizontalAlignment="Right"
+                              SelectedValuePath="Content"
+                              SelectionChanged="SalCapType_SelectionChanged">
+                        <ComboBoxItem Content="Hard Cap" Tag="Hard Cap" />
+                        <ComboBoxItem Content="Soft Cap" Tag="Soft Cap" />
+                    </ComboBox>
+                    <CheckBox x:Name="ChkBxLuxTax"
+                              Margin="0,10,0,0"
+                              Checked="ChkBxLuxTax_Checked"
+                              Content="Luxury Tax For Going Over Cap?"
+                              Unchecked="ChkBxLuxTax_Unchecked" />
+                    <CheckBox x:Name="ChkBxAdjustCap"
+                              Margin="0,10,0,0"
+                              Checked="ChkBxAdjustCap_Checked"
+                              Content="Auto Adjust Cap Based On League revenues?"
+                              Unchecked="ChkBxAdjustCap_Unchecked" />
+                    <CheckBox x:Name="ChkBxRookiePool"
+                              Margin="0,10,0,0"
+                              Checked="ChkBxRookiePool_Checked"
+                              Content="Use Rookie Pool CBA as Basis for Draft Pick Contracts?"
+                              Unchecked="ChkBxRookiePool_Unchecked" />
+                    <CheckBox x:Name="ChkBxCapCarryover"
+                              Margin="0,10,0,0"
+                              Checked="ChkBxCapCarryover_Checked"
+                              Content="Allow Unused Cap Dollars To Carryover To Next Year?"
+                              Unchecked="ChkBxCapCarryover_Unchecked" />
+                    <Label Margin="0,10,0,0" Content="Home Team Percentage of Gate Revenue" />
+                    <TextBox x:Name="GateRev"
+                             Width="50"
+                             Margin="330,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="GateRev_OnLostFocus"
+                             TextAlignment="Center" />
+                    <Label Margin="0,10,0,0" Content="League Salary Cap" />
+                    <TextBox x:Name="LgSalCap"
+                             Width="100"
+                             Margin="260,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="LgSalCap_OnLostFocus"
+                             TextAlignment="Center" />
+                    <CheckBox x:Name="ChkBxLuxBoxSharedRev"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left"
+                              Checked="ChkBxLuxBoxSharedRev_Checked"
+                              Content="Share Luxury Box Revenue Among Teams"
+                              Unchecked="ChkBxLuxBoxSharedRev_Unchecked" />
+                    <CheckBox x:Name="ChkBxShareMerchRev"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left"
+                              Checked="ChkBxShareMerchRev_Checked"
+                              Content="Share Merchandise Revenue Among Teams"
+                              Unchecked="ChkBxShareMerchRev_Unchecked" />
+                    <Label Content="Minimum Contract Value Based on Experience:" />
+                    <ComboBox x:Name="MinConExp"
+                              Width="100"
+                              Margin="0,10,0,0"
+                              HorizontalAlignment="Left">
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="0"
+                                      Tag="0" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="1"
+                                      Tag="1" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="2"
+                                      Tag="2" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="3"
+                                      Tag="3" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="4"
+                                      Tag="4" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="5"
+                                      Tag="5" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="6"
+                                      Tag="6" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="7"
+                                      Tag="7" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="8"
+                                      Tag="8" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="9"
+                                      Tag="9" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="10"
+                                      Tag="10" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="11"
+                                      Tag="11" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="12"
+                                      Tag="12" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="13"
+                                      Tag="13" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="14"
+                                      Tag="14" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="15+"
+                                      Tag="15+" />
+                    </ComboBox>
+                    <TextBox x:Name="MinSal"
+                             Width="120"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="MinSal_OnLostFocus"
+                             TextAlignment="Center" />
+                    <CheckBox x:Name="ChkBxAllowVetDisc"
+                              Margin="0,10,0,0"
+                              Checked="ChkBxAllowVetDisc_Checked"
+                              Content="Allow Veteran Min Contract At Lower Cap Number"
+                              Unchecked="ChkBxAllowVetDisc_Unchecked" />
+                    <Label Margin="0,10,0,0" Content="Minimum Years Exp To Be Eligible" />
+                    <TextBox x:Name="MinExp"
+                             Width="120"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="MinExp_OnLostFocus"
+                             TextAlignment="Center" />
+                    <Label Content="Contract Cap Hit Becomes" />
+                    <TextBox x:Name="VetMinConCapHit"
+                             Width="120"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="VetMinConCapHit_OnLostFocus"
+                             TextAlignment="Center" />
+                    <Label Content="Positional Contract Values:" />
+                    <ComboBox x:Name="PosConValues"
+                              Width="100"
+                              HorizontalAlignment="Center">
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="QB"
+                                      Tag="QB" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="RB"
+                                      Tag="RB" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="FB"
+                                      Tag="RB" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="WR"
+                                      Tag="WR" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="TE"
+                                      Tag="TE" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="OT"
+                                      Tag="OT" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="OG"
+                                      Tag="OG" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="C"
+                                      Tag="C" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="DE"
+                                      Tag="DE" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="DT"
+                                      Tag="DT" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="OLB"
+                                      Tag="OLB" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="ILB"
+                                      Tag="ILB" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="FS"
+                                      Tag="FS" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="SS"
+                                      Tag="SS" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="K"
+                                      Tag="K" />
+                        <ComboBoxItem HorizontalContentAlignment="Center"
+                                      Content="P"
+                                      Tag="P" />
+                    </ComboBox>
+                    <Label Content="Franchise Player" />
+                    <TextBox x:Name="FranSal"
+                             Width="120"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="FranSal_OnLostFocus"
+                             TextAlignment="Center" />
+                    <Label Content="Very Good Player" />
+                    <TextBox x:Name="VeryGoodSal"
+                             Width="120"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="VeryGoodSal_OnLostFocus"
+                             TextAlignment="Center" />
+                    <Label Content="Good Player" />
+                    <TextBox x:Name="GoodSal"
+                             Width="120"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="GoodSal_OnLostFocus"
+                             TextAlignment="Center" />
+                    <Label Content="Average Player" />
+                    <TextBox x:Name="AvgSal"
+                             Width="120"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="AvgSal_OnLostFocus"
+                             TextAlignment="Center" />
+                    <Label Content="Backup Player" />
+                    <TextBox x:Name="BackUpSal"
+                             Width="120"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="BackUpSal_OnLostFocus"
+                             TextAlignment="Center" />
+                    <Label Content="Depth Player" />
+                    <TextBox x:Name="DepthSal"
+                             Width="120"
+                             Margin="240,-25,0,0"
+                             HorizontalAlignment="Right"
+                             LostFocus="DepthSal_OnLostFocus"
+                             TextAlignment="Center" />
+                    <Button x:Name="LgFinAcceptBtn"
+                            Width="100"
+                            Height="Auto"
+                            Margin="0,30,0,0"
+                            HorizontalAlignment="Left"
+                            Click="LgFinAcceptBtn_Click"
+                            Content="Accept"
+                            Style="{DynamicResource SimpleButton}" />
+                    <Button x:Name="LgFinResetBtn"
+                            Width="150"
+                            Height="Auto"
+                            Margin="120,-23,0,0"
+                            HorizontalAlignment="Left"
+                            Click="LgFinResetBtn_Click"
+                            Content="Reset To Default"
+                            Style="{DynamicResource SimpleButton}" />
+                </StackPanel>
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

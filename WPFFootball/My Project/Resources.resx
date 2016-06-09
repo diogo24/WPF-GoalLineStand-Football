@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Cleveland_Browns_PHelmetJpg" xml:space="preserve">
+    <value>Cleveland_Browns_PHelmet.jpg</value>
+    <comment>Cleveland_Browns_PHelmetJpg description</comment>
+  </data>
+  <data name="Cincinnati_Bengals_PHelmetJpg" xml:space="preserve">
+    <value>Cincinnati_Bengals_PHelmet.jpg</value>
+    <comment>Cincinnati_Bengals_PHelmetJpg description</comment>
+  </data>
+  <data name="Buffalo_Bills_PHelmet_2011Jpg" xml:space="preserve">
+    <value>Buffalo_Bills_PHelmet_2011.jpg</value>
+    <comment>Buffalo_Bills_PHelmet_2011Jpg description</comment>
+  </data>
+  <data name="New_England_Patriots_PHelmetJpg" xml:space="preserve">
+    <value>New_England_Patriots_PHelmet.jpg</value>
+    <comment>New_England_Patriots_PHelmetJpg description</comment>
+  </data>
+  <data name="New_York_Jets_PHelmetJpg" xml:space="preserve">
+    <value>New_York_Jets_PHelmet.jpg</value>
+    <comment>New_York_Jets_PHelmetJpg description</comment>
+  </data>
+  <data name="Miami_Dolphins_PHelmetJpg" xml:space="preserve">
+    <value>Miami_Dolphins_PHelmet.jpg</value>
+    <comment>Miami_Dolphins_PHelmetJpg description</comment>
+  </data>
+  <data name="Pittsburgh_Steelers_PHelmetJpg" xml:space="preserve">
+    <value>Pittsburgh_Steelers_PHelmet.jpg</value>
+    <comment>Pittsburgh_Steelers_PHelmetJpg description</comment>
+  </data>
+  <data name="Baltimore_Ravens_PHelmetJpg" xml:space="preserve">
+    <value>Baltimore_Ravens_PHelmet.jpg</value>
+    <comment>Baltimore_Ravens_PHelmetJpg description</comment>
+  </data>
+  <data name="Houston_Texans_PHelmetJpg" xml:space="preserve">
+    <value>Houston_Texans_PHelmet.jpg</value>
+    <comment>Houston_Texans_PHelmetJpg description</comment>
+  </data>
+  <data name="Indianapolis_Colts_PHelmetJpg" xml:space="preserve">
+    <value>Indianapolis_Colts_PHelmet.jpg</value>
+    <comment>Indianapolis_Colts_PHelmetJpg description</comment>
+  </data>
+  <data name="Jacksonville_Jaguars_PHelmetJpg" xml:space="preserve">
+    <value>Jacksonville_Jaguars_PHelmet.jpg</value>
+    <comment>Jacksonville_Jaguars_PHelmetJpg description</comment>
+  </data>
+  <data name="Tennessee_Titans_PHelmetJpg" xml:space="preserve">
+    <value>Tennessee_Titans_PHelmet.jpg</value>
+    <comment>Tennessee_Titans_PHelmetJpg description</comment>
+  </data>
+  <data name="Denver_Broncos_PHelmetJpg" xml:space="preserve">
+    <value>Denver_Broncos_PHelmet.jpg</value>
+    <comment>Denver_Broncos_PHelmetJpg description</comment>
+  </data>
+  <data name="Kansas_City_Chiefs_PHelmetJpg" xml:space="preserve">
+    <value>Kansas_City_Chiefs_PHelmet.jpg</value>
+    <comment>Kansas_City_Chiefs_PHelmetJpg description</comment>
+  </data>
+  <data name="Oakland_Raiders_PHelmetJpg" xml:space="preserve">
+    <value>Oakland_Raiders_PHelmet.jpg</value>
+    <comment>Oakland_Raiders_PHelmetJpg description</comment>
+  </data>
+  <data name="San_Diego_Chargers_PHelmet2Jpg" xml:space="preserve">
+    <value>San_Diego_Chargers_PHelmet2.jpg</value>
+    <comment>San_Diego_Chargers_PHelmet2Jpg description</comment>
+  </data>
+  <data name="Washington_Redskins_PHelmetJpg" xml:space="preserve">
+    <value>Washington_Redskins_PHelmet.jpg</value>
+    <comment>Washington_Redskins_PHelmetJpg description</comment>
+  </data>
+  <data name="Philadelphia_Eagles_PHelmetJpg" xml:space="preserve">
+    <value>Philadelphia_Eagles_PHelmet.jpg</value>
+    <comment>Philadelphia_Eagles_PHelmetJpg description</comment>
+  </data>
+  <data name="New_York_Giants_PHelmetJpg" xml:space="preserve">
+    <value>New_York_Giants_PHelmet.jpg</value>
+    <comment>New_York_Giants_PHelmetJpg description</comment>
+  </data>
+  <data name="Dallas_Cowboys_PhelmetJpg" xml:space="preserve">
+    <value>Dallas_Cowboys_Phelmet.jpg</value>
+    <comment>Dallas_Cowboys_PhelmetJpg description</comment>
+  </data>
+  <data name="Minnesota_Vikings_PHelmet_2013Jpg" xml:space="preserve">
+    <value>Minnesota_Vikings_PHelmet_2013.jpg</value>
+    <comment>Minnesota_Vikings_PHelmet_2013Jpg description</comment>
+  </data>
+  <data name="Green_Bay_Packers_PHelmetJpg" xml:space="preserve">
+    <value>Green_Bay_Packers_PHelmet.jpg</value>
+    <comment>Green_Bay_Packers_PHelmetJpg description</comment>
+  </data>
+  <data name="Detroit_Lions_PHelmetJpg" xml:space="preserve">
+    <value>Detroit_Lions_PHelmet.jpg</value>
+    <comment>Detroit_Lions_PHelmetJpg description</comment>
+  </data>
+  <data name="Chicago_Bears_PHelmet2Jpg" xml:space="preserve">
+    <value>Chicago_Bears_PHelmet2.jpg</value>
+    <comment>Chicago_Bears_PHelmet2Jpg description</comment>
+  </data>
+  <data name="Carolina_Panthers_PHelmetJpg" xml:space="preserve">
+    <value>Carolina_Panthers_PHelmet.jpg</value>
+    <comment>Carolina_Panthers_PHelmetJpg description</comment>
+  </data>
+  <data name="Atlanta_Falcons_PHelmetJpg" xml:space="preserve">
+    <value>Atlanta_Falcons_PHelmet.jpg</value>
+    <comment>Atlanta_Falcons_PHelmetJpg description</comment>
+  </data>
+  <data name="New_Orleans_Saints_PHelmetJpg" xml:space="preserve">
+    <value>New_Orleans_Saints_PHelmet.jpg</value>
+    <comment>New_Orleans_Saints_PHelmetJpg description</comment>
+  </data>
+  <data name="Tampa_Bay_Buccaneers_PHelmetJpg" xml:space="preserve">
+    <value>Tampa_Bay_Buccaneers_PHelmet.jpg</value>
+    <comment>Tampa_Bay_Buccaneers_PHelmetJpg description</comment>
+  </data>
+  <data name="Arizona_Cardinals_HelmetJpg" xml:space="preserve">
+    <value>Arizona_Cardinals_Helmet.jpg</value>
+    <comment>Arizona_Cardinals_HelmetJpg description</comment>
+  </data>
+  <data name="Seattle_Seahawks_PHelmet_2012Jpg" xml:space="preserve">
+    <value>Seattle_Seahawks_PHelmet_2012.jpg</value>
+    <comment>Seattle_Seahawks_PHelmet_2012Jpg description</comment>
+  </data>
+  <data name="LARams1Png" xml:space="preserve">
+    <value>LARams1.png</value>
+    <comment>LARams1Png description</comment>
+  </data>
+  <data name="San_Francisco_49ers_PHelmet_NewJpg" xml:space="preserve">
+    <value>San_Francisco_49ers_PHelmet_New.jpg</value>
+    <comment>San_Francisco_49ers_PHelmet_NewJpg description</comment>
+  </data>
+  <data name="Buffalo_Bills02Jpg" xml:space="preserve">
+    <value>Buffalo_Bills02.jpg</value>
+    <comment>Buffalo_Bills02Jpg description</comment>
+  </data>
+  <data name="New_England_Patriots2Jpg" xml:space="preserve">
+    <value>New_England_Patriots2.jpg</value>
+    <comment>New_England_Patriots2Jpg description</comment>
+  </data>
+  <data name="New_York_JetsJpg" xml:space="preserve">
+    <value>New_York_Jets.jpg</value>
+    <comment>New_York_JetsJpg description</comment>
+  </data>
+  <data name="Miami_Dolphins_2013Jpg" xml:space="preserve">
+    <value>Miami_Dolphins_2013.jpg</value>
+    <comment>Miami_Dolphins_2013Jpg description</comment>
+  </data>
+  <data name="Cincinnati_Bengals3Jpg" xml:space="preserve">
+    <value>Cincinnati_Bengals3.jpg</value>
+    <comment>Cincinnati_Bengals3Jpg description</comment>
+  </data>
+  <data name="Pittsburgh_SteelersJpg" xml:space="preserve">
+    <value>Pittsburgh_Steelers.jpg</value>
+    <comment>Pittsburgh_SteelersJpg description</comment>
+  </data>
+  <data name="Baltimore_Ravens3Jpg" xml:space="preserve">
+    <value>Baltimore_Ravens3.jpg</value>
+    <comment>Baltimore_Ravens3Jpg description</comment>
+  </data>
+  <data name="Cleveland_Browns2Jpg" xml:space="preserve">
+    <value>Cleveland_Browns2.jpg</value>
+    <comment>Cleveland_Browns2Jpg description</comment>
+  </data>
+  <data name="Houston_Texans2Jpg" xml:space="preserve">
+    <value>Houston_Texans2.jpg</value>
+    <comment>Houston_Texans2Jpg description</comment>
+  </data>
+  <data name="Indianapolis_ColtsJpg" xml:space="preserve">
+    <value>Indianapolis_Colts.jpg</value>
+    <comment>Indianapolis_ColtsJpg description</comment>
+  </data>
+  <data name="Jacksonville_Jaguars2Jpg" xml:space="preserve">
+    <value>Jacksonville_Jaguars2.jpg</value>
+    <comment>Jacksonville_Jaguars2Jpg description</comment>
+  </data>
+  <data name="Tennessee_TitansJpg" xml:space="preserve">
+    <value>Tennessee_Titans.jpg</value>
+    <comment>Tennessee_TitansJpg description</comment>
+  </data>
+  <data name="Denver_Broncos2Jpg" xml:space="preserve">
+    <value>Denver_Broncos2.jpg</value>
+    <comment>Denver_Broncos2Jpg description</comment>
+  </data>
+  <data name="Kansas_City_Chiefs3Jpg" xml:space="preserve">
+    <value>Kansas_City_Chiefs3.jpg</value>
+    <comment>Kansas_City_Chiefs3Jpg description</comment>
+  </data>
+  <data name="Oakland_RaidersJpg" xml:space="preserve">
+    <value>Oakland_Raiders.jpg</value>
+    <comment>Oakland_RaidersJpg description</comment>
+  </data>
+  <data name="San_Diego_Chargers5Jpg" xml:space="preserve">
+    <value>San_Diego_Chargers5.jpg</value>
+    <comment>San_Diego_Chargers5Jpg description</comment>
+  </data>
+  <data name="ClevelandBrowns2Jpg" xml:space="preserve">
+    <value>ClevelandBrowns2.jpg</value>
+    <comment>ClevelandBrowns2Jpg description</comment>
+  </data>
+  <data name="Washington_Redskins2Jpg" xml:space="preserve">
+    <value>Washington_Redskins2.jpg</value>
+    <comment>Washington_Redskins2Jpg description</comment>
+  </data>
+  <data name="Philadelphia_Eagles2Jpg" xml:space="preserve">
+    <value>Philadelphia_Eagles2.jpg</value>
+    <comment>Philadelphia_Eagles2Jpg description</comment>
+  </data>
+  <data name="New_York_Giants5Jpg" xml:space="preserve">
+    <value>New_York_Giants5.jpg</value>
+    <comment>New_York_Giants5Jpg description</comment>
+  </data>
+  <data name="Dallas_Cowboys3Jpg" xml:space="preserve">
+    <value>Dallas_Cowboys3.jpg</value>
+    <comment>Dallas_Cowboys3Jpg description</comment>
+  </data>
+  <data name="Minnesota_Vikings_2013_06Jpg" xml:space="preserve">
+    <value>Minnesota_Vikings_2013_06.jpg</value>
+    <comment>Minnesota_Vikings_2013_06Jpg description</comment>
+  </data>
+  <data name="Green_Bay_Packers5Jpg" xml:space="preserve">
+    <value>Green_Bay_Packers5.jpg</value>
+    <comment>Green_Bay_Packers5Jpg description</comment>
+  </data>
+  <data name="Detroit_Lions3aJpg" xml:space="preserve">
+    <value>Detroit_Lions3a.jpg</value>
+    <comment>Detroit_Lions3aJpg description</comment>
+  </data>
+  <data name="Chicago_Bears4Jpg" xml:space="preserve">
+    <value>Chicago_Bears4.jpg</value>
+    <comment>Chicago_Bears4Jpg description</comment>
+  </data>
+  <data name="Carolina_PanthersJpg" xml:space="preserve">
+    <value>Carolina_Panthers.jpg</value>
+    <comment>Carolina_PanthersJpg description</comment>
+  </data>
+  <data name="Atlanta_FalconsJpg" xml:space="preserve">
+    <value>Atlanta_Falcons.jpg</value>
+    <comment>Atlanta_FalconsJpg description</comment>
+  </data>
+  <data name="New_Orleans_SaintsJpg" xml:space="preserve">
+    <value>New_Orleans_Saints.jpg</value>
+    <comment>New_Orleans_SaintsJpg description</comment>
+  </data>
+  <data name="Tampa_Bay_Buccaneers2Jpg" xml:space="preserve">
+    <value>Tampa_Bay_Buccaneers2.jpg</value>
+    <comment>Tampa_Bay_Buccaneers2Jpg description</comment>
+  </data>
+  <data name="Arizona_CardinalsJpg" xml:space="preserve">
+    <value>Arizona_Cardinals.jpg</value>
+    <comment>Arizona_CardinalsJpg description</comment>
+  </data>
+  <data name="Seattle_Seahawks2_2012Jpg" xml:space="preserve">
+    <value>Seattle_Seahawks2_2012.jpg</value>
+    <comment>Seattle_Seahawks2_2012Jpg description</comment>
+  </data>
+  <data name="LARamsJpg" xml:space="preserve">
+    <value>LARams.jpg</value>
+    <comment>LARamsJpg description</comment>
+  </data>
+  <data name="San_Francisco_49ers04Jpg" xml:space="preserve">
+    <value>San_Francisco_49ers04.jpg</value>
+    <comment>San_Francisco_49ers04Jpg description</comment>
+  </data>
+  <data name="Pittsburgh_Steelers2Jpg" xml:space="preserve">
+    <value>Pittsburgh_Steelers2.jpg</value>
+    <comment>Pittsburgh_Steelers2Jpg description</comment>
+  </data>
+  <data name="Cleveland_Browns2Jpg1" xml:space="preserve">
+    <value>Cleveland_Browns2.jpg</value>
+    <comment>Cleveland_Browns2Jpg1 description</comment>
+  </data>
+  <data name="Indianapolis_Colts2Jpg" xml:space="preserve">
+    <value>Indianapolis_Colts2.jpg</value>
+    <comment>Indianapolis_Colts2Jpg description</comment>
+  </data>
+  <data name="Tennessee_Titans2Jpg" xml:space="preserve">
+    <value>Tennessee_Titans2.jpg</value>
+    <comment>Tennessee_Titans2Jpg description</comment>
+  </data>
+  <data name="DetroitLions2Jpg" xml:space="preserve">
+    <value>DetroitLions2.jpg</value>
+    <comment>DetroitLions2Jpg description</comment>
+  </data>
+  <data name="Carolina_Panthers2Jpg" xml:space="preserve">
+    <value>Carolina_Panthers2.jpg</value>
+    <comment>Carolina_Panthers2Jpg description</comment>
+  </data>
+  <data name="New_Orleans_Saints2Jpg" xml:space="preserve">
+    <value>New_Orleans_Saints2.jpg</value>
+    <comment>New_Orleans_Saints2Jpg description</comment>
+  </data>
+  <data name="ArizonaCardinals3Jpg" xml:space="preserve">
+    <value>ArizonaCardinals3.jpg</value>
+    <comment>ArizonaCardinals3Jpg description</comment>
+  </data>
+  <data name="Oakland_Raiders_HelmetJpg" xml:space="preserve">
+    <value>Oakland_Raiders_Helmet.jpg</value>
+    <comment>Oakland_Raiders_HelmetJpg description</comment>
+  </data>
+  <data name="Schedule4GamesMaxTxt" xml:space="preserve">
+    <value>Schedule4GamesMax.txt</value>
+    <comment>Schedule4GamesMaxTxt description</comment>
+  </data>
+  <data name="RalphWilsonStadiumJpg" xml:space="preserve">
+    <value>RalphWilsonStadium.jpg</value>
+    <comment>RalphWilsonStadiumJpg description</comment>
+  </data>
+  <data name="GilletteStadiumJpg" xml:space="preserve">
+    <value>gillette-stadium.jpg</value>
+    <comment>GilletteStadiumJpg description</comment>
+  </data>
+  <data name="MetLife_StadiumJpg" xml:space="preserve">
+    <value>MetLife_Stadium.jpg</value>
+    <comment>MetLife_StadiumJpg description</comment>
+  </data>
+  <data name="SunLifeStadiumJpg" xml:space="preserve">
+    <value>SunLifeStadium.jpg</value>
+    <comment>SunLifeStadiumJpg description</comment>
+  </data>
+  <data name="PaulBrownStadiumJpg" xml:space="preserve">
+    <value>PaulBrownStadium.jpg</value>
+    <comment>PaulBrownStadiumJpg description</comment>
+  </data>
+  <data name="HeinzFieldJpg" xml:space="preserve">
+    <value>HeinzField.jpg</value>
+    <comment>HeinzFieldJpg description</comment>
+  </data>
+  <data name="MTBankStadiumJpg" xml:space="preserve">
+    <value>M&amp;TBankStadium.jpg</value>
+    <comment>MTBankStadiumJpg description</comment>
+  </data>
+  <data name="FirstEnergyStadiumJpg" xml:space="preserve">
+    <value>FirstEnergyStadium.jpg</value>
+    <comment>FirstEnergyStadiumJpg description</comment>
+  </data>
+  <data name="NRGStadiumJpg" xml:space="preserve">
+    <value>NRGStadium.jpg</value>
+    <comment>NRGStadiumJpg description</comment>
+  </data>
+  <data name="LucasOilStadiumJpg" xml:space="preserve">
+    <value>LucasOilStadium.jpg</value>
+    <comment>LucasOilStadiumJpg description</comment>
+  </data>
+  <data name="EverBankFieldJpg" xml:space="preserve">
+    <value>EverBankField.jpg</value>
+    <comment>EverBankFieldJpg description</comment>
+  </data>
+  <data name="NissanStadiumJpg" xml:space="preserve">
+    <value>NissanStadium.jpg</value>
+    <comment>NissanStadiumJpg description</comment>
+  </data>
+  <data name="SportsAuthorityFieldJpg" xml:space="preserve">
+    <value>Sports-Authority-Field.jpg</value>
+    <comment>SportsAuthorityFieldJpg description</comment>
+  </data>
+  <data name="ArrowheadStadiumJpg" xml:space="preserve">
+    <value>ArrowheadStadium.jpg</value>
+    <comment>ArrowheadStadiumJpg description</comment>
+  </data>
+  <data name="OaklandColiseumJpg" xml:space="preserve">
+    <value>OaklandColiseum.jpg</value>
+    <comment>OaklandColiseumJpg description</comment>
+  </data>
+  <data name="QualcommStadiumJpg" xml:space="preserve">
+    <value>QualcommStadium.jpg</value>
+    <comment>QualcommStadiumJpg description</comment>
+  </data>
+  <data name="FedexFieldJpg" xml:space="preserve">
+    <value>fedex-field.jpg</value>
+    <comment>FedexFieldJpg description</comment>
+  </data>
+  <data name="LincolnFinancialFieldJpg" xml:space="preserve">
+    <value>LincolnFinancialField.jpg</value>
+    <comment>LincolnFinancialFieldJpg description</comment>
+  </data>
+  <data name="ATTStadiumJpg" xml:space="preserve">
+    <value>ATTStadium.jpg</value>
+    <comment>ATTStadiumJpg description</comment>
+  </data>
+  <data name="USBankStadiumJpg" xml:space="preserve">
+    <value>USBankStadium.jpg</value>
+    <comment>USBankStadiumJpg description</comment>
+  </data>
+  <data name="LambeaufieldJpg" xml:space="preserve">
+    <value>lambeaufield.jpg</value>
+    <comment>LambeaufieldJpg description</comment>
+  </data>
+  <data name="FordfieldJpg" xml:space="preserve">
+    <value>fordfield.jpg</value>
+    <comment>FordfieldJpg description</comment>
+  </data>
+  <data name="SoldierFieldJpg" xml:space="preserve">
+    <value>SoldierField.jpg</value>
+    <comment>SoldierFieldJpg description</comment>
+  </data>
+  <data name="BankOfAmericaStadiumJpg" xml:space="preserve">
+    <value>BankOfAmericaStadium.jpg</value>
+    <comment>BankOfAmericaStadiumJpg description</comment>
+  </data>
+  <data name="GeorgiaDomePng" xml:space="preserve">
+    <value>Georgia-Dome.png</value>
+    <comment>GeorgiaDomePng description</comment>
+  </data>
+  <data name="Superdome_saintsJpg" xml:space="preserve">
+    <value>superdome_saints.jpg</value>
+    <comment>Superdome_saintsJpg description</comment>
+  </data>
+  <data name="RaymondJamesStadiumJpg" xml:space="preserve">
+    <value>RaymondJamesStadium.jpg</value>
+    <comment>RaymondJamesStadiumJpg description</comment>
+  </data>
+  <data name="University_phoenix_stadiumJpg" xml:space="preserve">
+    <value>university_phoenix_stadium.jpg</value>
+    <comment>University_phoenix_stadiumJpg description</comment>
+  </data>
+  <data name="CenturyLinkFieldJpg" xml:space="preserve">
+    <value>CenturyLinkField.jpg</value>
+    <comment>CenturyLinkFieldJpg description</comment>
+  </data>
+  <data name="LosAngelesColiseumJpg" xml:space="preserve">
+    <value>LosAngelesColiseum.jpg</value>
+    <comment>LosAngelesColiseumJpg description</comment>
+  </data>
+  <data name="LevisStadiumJpg" xml:space="preserve">
+    <value>levis-stadium.jpg</value>
+    <comment>LevisStadiumJpg description</comment>
+  </data>
+  <data name="GlobalClass_GetBackgroundFilePath_FootballGoalLine_jpg" xml:space="preserve">
+    <value>FootballGoalLine.jpg</value>
+  </data>
+</root>
