@@ -91,14 +91,6 @@
       <HintPath>..\packages\Troschuetz.Random.4.0.4\lib\net46\Troschuetz.Random.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UpdateControls, Version=2.3.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
-      <HintPath>..\packages\UpdateControls.2.3.2.1\lib\net45\UpdateControls.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UpdateControls.XAML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
-      <HintPath>..\packages\UpdateControls.2.3.2.1\lib\net45\UpdateControls.XAML.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

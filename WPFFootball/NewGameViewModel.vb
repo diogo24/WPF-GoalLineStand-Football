@@ -7,23 +7,28 @@ Imports WPFFootball.My.Resources
 '''     Subs and Functions that are used by more than one window.
 ''' </summary>
 Public Class NewGameViewModel
- Implements INotifyPropertyChanged
+    Implements INotifyPropertyChanged
 
     Public TeamEnumList As New Teams
-Public Sub New()
 
-        MyBackgroundImg=New BitmapImage(New Uri(GetBackgroundFilePath,
-                                                         UriKind.RelativeOrAbsolute))
-End Sub
+    Public Sub New()
+
+        MyBackgroundImg = New BitmapImage(New Uri(GetBackgroundFilePath,
+                                                  UriKind.RelativeOrAbsolute))
+    End Sub
 
 #Region "INotifyPropertyChanged"
+
     Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
-    
+
     private Sub OnPropertyChanged(name As String)
         RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(name))
     End Sub
+
 #End Region
+
 #Region "Private Variables"
+
     private _primcolor as Brush
     Private _seccolor as Brush
     private _trimcolor as Brush
@@ -35,8 +40,11 @@ End Sub
     private _myteamrecord as string
     private _mybackgroundimg as imagesource
     private MyDT as New ObservableCollection(Of DataTable)
+
 #End Region
+
 #Region "Public Properties"
+
     public Property MyStadiumName as String
         Get
             return _mystadiumname
@@ -86,66 +94,72 @@ End Sub
             OnPropertyChanged("MyDTProperty")
         End Set
     End Property
+
     public Property MyStadiumCapacity as String
-    Get
-        
-        return _MyStadiumCapacity
-    End Get
-        Set(value as String)
-            _MyStadiumCapacity=value
+        Get
+
+            return _MyStadiumCapacity
+        End Get
+        Set
+            _MyStadiumCapacity = value
             OnPropertyChanged("MyStadiumCapacity")
         End Set
     End Property
+
     public Property MyCityState as String
-    get       
-        return _mycitystate
-    End Get
-        Set(value as String)
-            _mycitystate=value
+        get
+            return _mycitystate
+        End Get
+        Set
+            _mycitystate = value
             OnPropertyChanged("MyCityState")
         End Set
     End Property
+
     public Property MyStadiumPic as ImageSource
-    Get
+        Get
             Return _mystadiumpic
-    End Get
-        Set(value as ImageSource)
-            _mystadiumpic=value
+        End Get
+        Set
+            _mystadiumpic = value
             OnPropertyChanged("MyStadiumPic")
         End Set
     End Property
 
     public Property MyAvgAttendance as String
-    Get
+        Get
             return _myavgattendance
-    End Get
-        Set(value as String)
-            _myavgattendance=value
+        End Get
+        Set
+            _myavgattendance = value
             OnPropertyChanged("MyAvgAttendance")
         End Set
     End Property
 
     public Property MyTeamRecord as string
-    Get
+        Get
             return _myteamrecord
-    End Get
-        Set(value as string)
-            _myteamrecord=value
+        End Get
+        Set
+            _myteamrecord = value
             OnPropertyChanged("MyTeamRecord")
         End Set
     End Property
+
     public property MyBackgroundImg as imagesource
-    get
+        get
             return _mybackgroundimg
-    End Get
-        Set(value as imagesource)
-            _mybackgroundimg=value
+        End Get
+        Set
+            _mybackgroundimg = value
             OnPropertychanged("MyBackgroundImg")
         End Set
     End Property
 
-    #End Region
+#End Region
+
 # Region "Enums"
+
     public Enum DivisionNames
         <Description("AFC East")> AFCE = 1
         <Description("AFC North")> AFCN = 2
@@ -192,52 +206,54 @@ End Sub
         <Description("Los Angeles Rams")> LAR = 31
         <Description("San Francisco 49ers")> SFO = 32
     End Enum
-    # End Region
+
+# End Region
+
     ''' <summary>
     '''     Sets the background picture of the screen
     ''' </summary>
     ''' <param name="TeamNum"></param>
     ''' <returns></returns>
- Public Shared Function GetBackgroundFilePath(optional byval TeamNum As Integer=32) As String
-        Dim filepath = "pack://application:,,,/Project Files/"         
-       
-            Select Case TeamNum
-                Case 0 : filepath += My.Resources.Buffalo_Bills02Jpg
-                Case 1 : filepath += My.Resources.New_England_Patriots2Jpg
-                Case 2 : filepath += My.Resources.New_York_JetsJpg
-                Case 3 : filepath += My.Resources.Miami_Dolphins_2013Jpg
-                Case 4 : filepath += My.Resources.Cincinnati_Bengals3Jpg
-                Case 5 : filepath += My.Resources.Pittsburgh_Steelers2Jpg
-                Case 6 : filepath += My.Resources.Baltimore_Ravens3Jpg
-                Case 7 : filepath += My.Resources.Cleveland_Browns2Jpg1
-                Case 8 : filepath += My.Resources.Houston_Texans2Jpg
-                Case 9 : filepath += My.Resources.Indianapolis_Colts2Jpg
-                Case 10 : filepath += My.Resources.Jacksonville_Jaguars2Jpg
-                Case 11 : filepath += My.Resources.Tennessee_Titans2Jpg
-                Case 12 : filepath += My.Resources.Denver_Broncos2Jpg
-                Case 13 : filepath += My.Resources.Kansas_City_Chiefs3Jpg
-                Case 14 : filepath += My.Resources.Oakland_RaidersJpg
-                Case 15 : filepath += My.Resources.San_Diego_Chargers5Jpg
-                case 16 : filepath += My.Resources.Washington_Redskins2Jpg
-                case 17 : filepath += My.Resources.Philadelphia_Eagles2Jpg
-                case 18 : filepath += My.Resources.New_York_Giants5Jpg
-                case 19 : filepath += My.Resources.Dallas_Cowboys3Jpg
-                case 20 : filepath += My.Resources.Minnesota_Vikings_2013_06Jpg
-                case 21 : filepath += My.Resources.Green_Bay_Packers5Jpg
-                case 22 : filepath += My.Resources.DetroitLions2Jpg
-                case 23 : filepath += My.Resources.Chicago_Bears4Jpg
-                Case 24 : filepath += My.Resources.Carolina_Panthers2Jpg
-                case 25 : filepath += My.Resources.Atlanta_FalconsJpg
-                case 26 : filepath += My.Resources.New_Orleans_Saints2Jpg
-                case 27 : filepath += My.Resources.Tampa_Bay_Buccaneers2Jpg
-                case 28 : filepath += My.Resources.ArizonaCardinals3Jpg
-                case 29 : filepath += My.Resources.Seattle_Seahawks2_2012Jpg
-                case 30 : filepath += My.Resources.LARamsJpg
-                case 31 : filepath += My.Resources.San_Francisco_49ers04Jpg
-                case 32 : filepath += GlobalClass_GetBackgroundFilePath_FootballGoalLine_jpg
-            End Select
-       
-       Return filepath
+    Public Shared Function GetBackgroundFilePath(optional byval TeamNum As Integer = 32) As String
+        Dim filepath = "pack://application:,,,/Project Files/"
+
+        Select Case TeamNum
+            Case 0 : filepath += Buffalo_Bills02Jpg
+            Case 1 : filepath += New_England_Patriots2Jpg
+            Case 2 : filepath += New_York_JetsJpg
+            Case 3 : filepath += Miami_Dolphins_2013Jpg
+            Case 4 : filepath += Cincinnati_Bengals3Jpg
+            Case 5 : filepath += Pittsburgh_Steelers2Jpg
+            Case 6 : filepath += Baltimore_Ravens3Jpg
+            Case 7 : filepath += Cleveland_Browns2Jpg1
+            Case 8 : filepath += Houston_Texans2Jpg
+            Case 9 : filepath += Indianapolis_Colts2Jpg
+            Case 10 : filepath += Jacksonville_Jaguars2Jpg
+            Case 11 : filepath += Tennessee_Titans2Jpg
+            Case 12 : filepath += Denver_Broncos2Jpg
+            Case 13 : filepath += Kansas_City_Chiefs3Jpg
+            Case 14 : filepath += Oakland_RaidersJpg
+            Case 15 : filepath += San_Diego_Chargers5Jpg
+            case 16 : filepath += Washington_Redskins2Jpg
+            case 17 : filepath += Philadelphia_Eagles2Jpg
+            case 18 : filepath += New_York_Giants5Jpg
+            case 19 : filepath += Dallas_Cowboys3Jpg
+            case 20 : filepath += Minnesota_Vikings_2013_06Jpg
+            case 21 : filepath += Green_Bay_Packers5Jpg
+            case 22 : filepath += DetroitLions2Jpg
+            case 23 : filepath += Chicago_Bears4Jpg
+            Case 24 : filepath += Carolina_Panthers2Jpg
+            case 25 : filepath += Atlanta_FalconsJpg
+            case 26 : filepath += New_Orleans_Saints2Jpg
+            case 27 : filepath += Tampa_Bay_Buccaneers2Jpg
+            case 28 : filepath += ArizonaCardinals3Jpg
+            case 29 : filepath += Seattle_Seahawks2_2012Jpg
+            case 30 : filepath += LARamsJpg
+            case 31 : filepath += San_Francisco_49ers04Jpg
+            case 32 : filepath += GlobalClass_GetBackgroundFilePath_FootballGoalLine_jpg
+        End Select
+
+        Return filepath
     End Function
 
     ''' <summary>
@@ -330,6 +346,7 @@ End Sub
         End Select
         return filepath
     End Function
+
     Public shared function GetBrush(TeamNum As integer, MyQueue As Queue, TeamDT As datatable) As Queue
         TeamNum += 1
         for i = 0 To TeamDT.Rows.Count - 1
@@ -342,6 +359,7 @@ End Sub
         Next i
         Return myQueue
     End function
+
     Public Shared Function ConvertColor(HexString As String) As Brush
         Dim converter = New BrushConverter()
         dim myBrush As Brush
