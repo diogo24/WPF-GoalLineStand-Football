@@ -28,7 +28,7 @@ Public Class NewGameViewModel
 #End Region
 
 #Region "Private Variables"
-
+    Private _myhelmet as Imagesource
     private _primcolor as Brush
     Private _seccolor as Brush
     private _trimcolor as Brush
@@ -123,6 +123,16 @@ Public Class NewGameViewModel
         Set
             _mystadiumpic = value
             OnPropertyChanged("MyStadiumPic")
+        End Set
+    End Property
+
+    Public Property MyHelmet As ImageSource
+    Get
+            Return _myhelmet
+    End Get
+        Set(value As ImageSource)
+            _myhelmet=value
+            OnPropertyChanged("MyHelmet")
         End Set
     End Property
 

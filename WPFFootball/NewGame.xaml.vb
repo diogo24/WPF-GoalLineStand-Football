@@ -5,8 +5,6 @@ Imports System.Reflection
 Imports System.Text.RegularExpressions
 Imports SQLFunctions
 Imports Troschuetz.Random
-
-
 Public Class NewGame
     private ReadOnly SQLTable as New SQLiteDataFunctions
     private Shared ReadOnly TeamDT as new DataTable
@@ -29,12 +27,12 @@ Public Class NewGame
 
 
     Sub New()
-
         ' This call is required by the designer.
         InitializeComponent()
+
         For Each team As NewGameViewModel.Teams In EnumToList (Of NewGameViewModel.Teams)()
             TeamCombo.Items.Add(GetEnumDescription(team))
-            myRand.NextUInt()
+            myRand.NextUInt() 'Initiate the random number generator to get good randomness
         Next team
 
         'Sets the DataContext of the Model to the ViewModel
@@ -93,7 +91,8 @@ Public Class NewGame
     ''' <param name="e"></param>
     Private Sub TeamCombo_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) _
         Handles TeamCombo.SelectionChanged
-        TeamHelmet.Source = NewGameViewModel.GetImage(TeamCombo.SelectedIndex).Source
+
+        MyVM.MyHelmet = NewGameViewModel.GetImage(TeamCombo.SelectedIndex).Source
         Helmet.Visibility = 0
         MyVM.MyBackgroundImg = New BitmapImage(New Uri(NewGameViewModel.GetBackgroundFilePath(TeamCombo.SelectedIndex),
                                                        UriKind.RelativeOrAbsolute))
@@ -124,7 +123,8 @@ Public Class NewGame
         dim DeadCap as integer = myRand.NextUInt(3000000, 12000000)
         dim AvailCap as Integer = SalCapTotal - TotContracts - DeadCap
 
-        MyDiv = teamdt.Rows(teamnum).Item("DivID")
+        MyDiv = TeamDT.Rows(teamnum).Item("DivID")
+
         MyVM.MyStadiumName = string.format("Stadium Name: {0}", Teamdt.Rows(teamnum).item("StadiumName"))
         MyVM.MyStadiumCapacity = string.format("Stadium Capacity: {0}", MyCap)
         MyVM.MYStadiumPic = New BitmapImage(New Uri(NewGameViewModel.GetStadiumPic(TeamCombo.SelectedIndex),
@@ -144,7 +144,7 @@ Public Class NewGame
         TeamStaff.Inlines.Add(New LineBreak)
         TeamStaff.Inlines.Add(New Run() With {.Foreground = MyVM.MyTrimColor, .Text = "Owner "})
         TeamStaff.Inlines.Add(New LineBreak)
-        teamstaff.Inlines.Add(
+        Teamstaff.Inlines.Add(
             New Run() _
                                  With {.FontSize = 24,
                                  .Text =

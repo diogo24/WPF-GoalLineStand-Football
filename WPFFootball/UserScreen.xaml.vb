@@ -11,7 +11,7 @@ Public Class UserScreen
 
         ' This call is required by the designer.
         InitializeComponent()
-        UserBackground.ImageSource = New BitmapImage(New Uri(NewGameViewModel.GetBackgroundFilePath(TeamID),
+        GridBackground.ImageSource= New BitmapImage(New Uri(NewGameViewModel.GetBackgroundFilePath(TeamID),
                                                              UriKind.RelativeOrAbsolute))
         ' Add any initialization after the InitializeComponent() call.
         myTeam = TeamID

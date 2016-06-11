@@ -5,11 +5,13 @@ Public Class GameSettings
     Dim ReadOnly SetArray(22) as string
     Dim ReadOnly TempArray(125) as string
     dim DoOnce as Boolean
-
+    dim MyVM as New GameSettingsViewModel
+   
     Sub New(TeamID As Integer)
         ' This call is required by the designer.
         InitializeComponent()
         myTeam = TeamID
+        DataContext=MyVM
         ' Add any initialization after the InitializeComponent() call.
         GetSettings(TeamID)
     End Sub
@@ -21,14 +23,13 @@ Public Class GameSettings
     ''' <param name="e"></param>
     Private Sub Accept_OnClick(sender As Object, e As RoutedEventArgs)
         dim userTeam as new UserScreen(myTeam)
-        'WindowSize =Display.SelectedItem.GetHashCode()
         userTeam.Show()
         GetWindow(userTeam)
         close
     End Sub
 
     Private Sub GetSettings(TeamID As Integer)
-        LgSettingsGridBG.ImageSource = New BitmapImage(New Uri(NewGameViewModel.GetBackgroundFilePath(TeamID),
+        MyVM.MyBackgroundImg = New BitmapImage(New Uri(NewGameViewModel.GetBackgroundFilePath(TeamID),
                                                                UriKind.RelativeOrAbsolute))
         LoadSettings()
         'LgSettingsTabControlBG=
@@ -38,651 +39,6 @@ Public Class GameSettings
         For i = 0 To 15
 
         Next i
-    End Sub
-
-    Private Sub ChkBxLuxTax_Checked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(2))
-        TempArray(2) += "True"
-    End Sub
-
-    Private Sub ChkBxLuxTax_Unchecked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(2))
-        TempArray(2) += "False"
-    End Sub
-
-    Private Sub SalCapType_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        ResetValues(temparray(1))
-        TempArray(1) += SalCapType.SelectedItem.Tag.tostring
-    End Sub
-
-    Private Sub ChkBxAdjustCap_Checked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(3))
-        TempArray(3) += "True"
-    End Sub
-
-    Private Sub ChkBxAdjustCap_Unchecked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(3))
-        TempArray(3) += "False"
-    End Sub
-
-    Private Sub ChkBxRookiePool_Checked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(4))
-        TempArray(4) += "True"
-    End Sub
-
-    Private Sub ChkBxRookiePool_Unchecked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(4))
-        TempArray(4) += "False"
-    End Sub
-
-    Private Sub ChkBxCapCarryover_Checked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(5))
-        TempArray(5) += "True"
-    End Sub
-
-    Private Sub ChkBxCapCarryover_Unchecked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(5))
-        TempArray(5) += "False"
-    End Sub
-
-    Private Sub ChkBxSalCap_Checked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(0))
-        TempArray(0) += "True"
-    End Sub
-
-    Private Sub ChkBxSalCap_Unchecked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(0))
-        TempArray(0) += "False"
-    End Sub
-
-    Private Sub GateRev_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(6))
-        TempArray(6) += GateRev.Text
-    End Sub
-
-    Private Sub LgSalCap_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(7))
-        dim num = CInt(lgsalCap.Text)
-        LgSalCap.Text = num.ToString("N0")
-        TempArray(7) += LGSalCap.text
-    End Sub
-
-    Private Sub ChkBxLuxBoxSharedRev_Checked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(8))
-        TempArray(8) += "True"
-    End Sub
-
-    Private Sub ChkBxLuxBoxSharedRev_Unchecked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(8))
-        TempArray(8) += "False"
-    End Sub
-
-    Private Sub ChkBxShareMerchRev_Checked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(9))
-        TempArray(9) += "True"
-    End Sub
-
-    Private Sub ChkBxShareMerchRev_Unchecked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(9))
-        TempArray(9) += "False"
-    End Sub
-
-    Private Sub MinSal_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        If MinSal.Text <> "" then
-            Dim num = CInt(minsal.Text)
-
-            MinSal.Text = num.ToString("N0")
-            Select Case MinConExp.SelectedIndex
-                Case 0 :
-                    ResetValues(temparray(10))
-                    TempArray(10) += minsal.text
-                Case 1 :
-                    ResetValues(temparray(11))
-                    TempArray(11) += MinSal.text
-                Case 2 :
-                    ResetValues(temparray(12))
-                    TempArray(12) += MinSal.text
-                Case 3 :
-                    ResetValues(temparray(13))
-                    TempArray(13) += MinSal.text
-                Case 4 :
-                    ResetValues(temparray(14))
-                    TempArray(14) += MinSal.text
-                Case 5 :
-                    ResetValues(temparray(15))
-                    TempArray(15) += MinSal.text
-                Case 6 :
-                    ResetValues(temparray(16))
-                    TempArray(16) += MinSal.text
-                Case 7 :
-                    ResetValues(temparray(17))
-                    TempArray(17) += MinSal.text
-                Case 8 :
-                    ResetValues(temparray(18))
-                    TempArray(18) += MinSal.text
-                Case 9 :
-                    ResetValues(temparray(19))
-                    TempArray(19) += MinSal.text
-                Case 10 :
-                    ResetValues(temparray(20))
-                    TempArray(20) += MinSal.text
-                Case 11 :
-                    ResetValues(temparray(21))
-                    TempArray(21) += MinSal.text
-                Case 12 :
-                    ResetValues(temparray(22))
-                    TempArray(22) += MinSal.text
-                Case 13 :
-                    ResetValues(temparray(23))
-                    TempArray(23) += MinSal.text
-                Case 14 :
-                    ResetValues(temparray(24))
-                    TempArray(24) += MinSal.text
-            End Select
-        End if
-    End Sub
-
-    Private Sub ChkBxAllowVetDisc_Checked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(25))
-        TempArray(25) += "True"
-    End Sub
-
-    Private Sub ChkBxAllowVetDisc_Unchecked(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(25))
-        TempArray(25) += "False"
-    End Sub
-
-    Private Sub MinExp_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(26))
-        TempArray(26) += MinExp.text
-    End Sub
-
-    Private Sub VetMinConCapHit_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        ResetValues(temparray(27))
-        dim num = CInt(VetMinConCapHit.Text)
-        VetMinConCapHit.Text = num.ToString("N0")
-        TempArray(27) += VetMinConCapHit.text
-    End Sub
-
-    Private Sub FranSal_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        Dim num = CInt(FranSal.Text)
-        FranSal.Text = num.ToString("N0")
-        select case PosConValues.SelectedIndex
-            Case 0 :
-                ResetValues(temparray(28))
-                TempArray(28) += FranSal.Text
-            Case 1 :
-                ResetValues(temparray(34))
-                TempArray(34) += FranSal.Text
-            Case 2 :
-                ResetValues(temparray(40))
-                TempArray(40) += FranSal.Text
-            Case 3 :
-                ResetValues(temparray(46))
-                TempArray(46) += FranSal.Text
-            Case 4 :
-                ResetValues(temparray(52))
-                TempArray(52) += FranSal.Text
-            Case 5 :
-                ResetValues(temparray(58))
-                TempArray(58) += FranSal.Text
-            Case 6 :
-                ResetValues(temparray(64))
-                TempArray(64) += FranSal.Text
-            Case 7 :
-                ResetValues(temparray(70))
-                TempArray(70) += FranSal.Text
-            Case 8 :
-                ResetValues(temparray(76))
-                TempArray(76) += FranSal.Text
-            Case 9 :
-                ResetValues(temparray(82))
-                TempArray(82) += FranSal.Text
-            Case 10 :
-                ResetValues(temparray(88))
-                TempArray(88) += FranSal.Text
-            Case 11 :
-                ResetValues(temparray(94))
-                TempArray(94) += FranSal.Text
-            Case 12 :
-                ResetValues(temparray(100))
-                TempArray(100) += FranSal.Text
-            Case 13 :
-                ResetValues(temparray(106))
-                TempArray(106) += FranSal.Text
-            Case 14 :
-                ResetValues(temparray(112))
-                TempArray(112) += FranSal.Text
-            Case 15 :
-                ResetValues(temparray(118))
-                TempArray(118) += FranSal.Text
-        End Select
-    End Sub
-
-    Private Sub VeryGoodSal_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        Dim num = CInt(VeryGoodSal.Text)
-        VeryGoodSal.Text = num.ToString("N0")
-        select case PosConValues.SelectedIndex
-            Case 0 :
-                ResetValues(temparray(29))
-                TempArray(29) += VeryGoodSal.Text
-            Case 1 :
-                ResetValues(temparray(35))
-                TempArray(35) += VeryGoodSal.Text
-            Case 2 :
-                ResetValues(temparray(41))
-                TempArray(41) += VeryGoodSal.Text
-            Case 3 :
-                ResetValues(temparray(47))
-                TempArray(47) += VeryGoodSal.Text
-            Case 4 :
-                ResetValues(temparray(53))
-                TempArray(53) += VeryGoodSal.Text
-            Case 5 :
-                ResetValues(temparray(59))
-                TempArray(59) += VeryGoodSal.Text
-            Case 6 :
-                ResetValues(temparray(65))
-                TempArray(65) += VeryGoodSal.Text
-            Case 7 :
-                ResetValues(temparray(71))
-                TempArray(71) += VeryGoodSal.Text
-            Case 8 :
-                ResetValues(temparray(77))
-                TempArray(77) += VeryGoodSal.Text
-            Case 9 :
-                ResetValues(temparray(83))
-                TempArray(83) += VeryGoodSal.Text
-            Case 10 :
-                ResetValues(temparray(89))
-                TempArray(89) += VeryGoodSal.Text
-            Case 11 :
-                ResetValues(temparray(95))
-                TempArray(95) += VeryGoodSal.Text
-            Case 12 :
-                ResetValues(temparray(101))
-                TempArray(101) += VeryGoodSal.Text
-            Case 13 :
-                ResetValues(temparray(107))
-                TempArray(107) += VeryGoodSal.Text
-            Case 14 :
-                ResetValues(temparray(113))
-                TempArray(113) += VeryGoodSal.Text
-            Case 15 :
-                ResetValues(temparray(119))
-                TempArray(119) += VeryGoodSal.Text
-        End Select
-    End Sub
-
-    Private Sub GoodSal_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        Dim num = CInt(GoodSal.Text)
-        GoodSal.Text = num.ToString("N0")
-        select case PosConValues.SelectedIndex
-            Case 0 :
-                ResetValues(temparray(30))
-                TempArray(30) += GoodSal.Text
-            Case 1 :
-                ResetValues(temparray(36))
-                TempArray(36) += GoodSal.Text
-            Case 2 :
-                ResetValues(temparray(42))
-                TempArray(42) += GoodSal.Text
-            Case 3 :
-                ResetValues(temparray(48))
-                TempArray(48) += GoodSal.Text
-            Case 4 :
-                ResetValues(temparray(54))
-                TempArray(54) += GoodSal.Text
-            Case 5 :
-                ResetValues(temparray(60))
-                TempArray(60) += GoodSal.Text
-            Case 6 :
-                ResetValues(temparray(66))
-                TempArray(66) += GoodSal.Text
-            Case 7 :
-                ResetValues(temparray(72))
-                TempArray(72) += GoodSal.Text
-            Case 8 :
-                ResetValues(temparray(78))
-                TempArray(78) += GoodSal.Text
-            Case 9 :
-                ResetValues(temparray(84))
-                TempArray(84) += GoodSal.Text
-            Case 10 :
-                ResetValues(temparray(90))
-                TempArray(90) += GoodSal.Text
-            Case 11 :
-                ResetValues(temparray(96))
-                TempArray(96) += GoodSal.Text
-            Case 12 :
-                ResetValues(temparray(102))
-                TempArray(102) += GoodSal.Text
-            Case 13 :
-                ResetValues(temparray(108))
-                TempArray(108) += GoodSal.Text
-            Case 14 :
-                ResetValues(temparray(114))
-                TempArray(114) += GoodSal.Text
-            Case 15 :
-                ResetValues(temparray(120))
-                TempArray(120) += GoodSal.Text
-        End Select
-    End Sub
-
-    Private Sub AvgSal_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        Dim num = CInt(AvgSal.Text)
-        AvgSal.Text = num.ToString("N0")
-        select case PosConValues.SelectedIndex
-            Case 0 :
-                ResetValues(temparray(31))
-                TempArray(31) += AvgSal.Text
-            Case 1 :
-                ResetValues(temparray(37))
-                TempArray(37) += AvgSal.Text
-            Case 2 :
-                ResetValues(temparray(43))
-                TempArray(43) += AvgSal.Text
-            Case 3 :
-                ResetValues(temparray(49))
-                TempArray(49) += AvgSal.Text
-            Case 4 :
-                ResetValues(temparray(55))
-                TempArray(55) += AvgSal.Text
-            Case 5 :
-                ResetValues(temparray(61))
-                TempArray(61) += AvgSal.Text
-            Case 6 :
-                ResetValues(temparray(67))
-                TempArray(67) += AvgSal.Text
-            Case 7 :
-                ResetValues(temparray(73))
-                TempArray(73) += AvgSal.Text
-            Case 8 :
-                ResetValues(temparray(79))
-                TempArray(79) += AvgSal.Text
-            Case 9 :
-                ResetValues(temparray(85))
-                TempArray(85) += AvgSal.Text
-            Case 10 :
-                ResetValues(temparray(91))
-                TempArray(91) += AvgSal.Text
-            Case 11 :
-                ResetValues(temparray(97))
-                TempArray(97) += AvgSal.Text
-            Case 12 :
-                ResetValues(temparray(103))
-                TempArray(103) += AvgSal.Text
-            Case 13 :
-                ResetValues(temparray(109))
-                TempArray(109) += AvgSal.Text
-            Case 14 :
-                ResetValues(temparray(115))
-                TempArray(115) += AvgSal.Text
-            Case 15 :
-                ResetValues(temparray(121))
-                TempArray(121) += AvgSal.Text
-        End Select
-    End Sub
-
-    Private Sub BackUpSal_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        Dim num = CInt(BackUpSal.Text)
-        BackUpSal.Text = num.ToString("N0")
-        select case PosConValues.SelectedIndex
-            Case 0 :
-                ResetValues(temparray(32))
-                TempArray(32) += BackUpSal.Text
-            Case 1 :
-                ResetValues(temparray(38))
-                TempArray(38) += BackUpSal.Text
-            Case 2 :
-                ResetValues(temparray(44))
-                TempArray(44) += BackUpSal.Text
-            Case 3 :
-                ResetValues(temparray(50))
-                TempArray(50) += BackUpSal.Text
-            Case 4 :
-                ResetValues(temparray(56))
-                TempArray(56) += BackUpSal.Text
-            Case 5 :
-                ResetValues(temparray(62))
-                TempArray(62) += BackUpSal.Text
-            Case 6 :
-                ResetValues(temparray(68))
-                TempArray(68) += BackUpSal.Text
-            Case 7 :
-                ResetValues(temparray(74))
-                TempArray(74) += BackUpSal.Text
-            Case 8 :
-                ResetValues(temparray(80))
-                TempArray(80) += BackUpSal.Text
-            Case 9 :
-                ResetValues(temparray(86))
-                TempArray(86) += BackUpSal.Text
-            Case 10 :
-                ResetValues(temparray(92))
-                TempArray(92) += BackUpSal.Text
-            Case 11 :
-                ResetValues(temparray(98))
-                TempArray(98) += BackUpSal.Text
-            Case 12 :
-                ResetValues(temparray(104))
-                TempArray(104) += BackUpSal.Text
-            Case 13 :
-                ResetValues(temparray(110))
-                TempArray(110) += BackUpSal.Text
-            Case 14 :
-                ResetValues(temparray(116))
-                TempArray(116) += BackUpSal.Text
-            Case 15 :
-                ResetValues(temparray(122))
-                TempArray(122) += BackUpSal.Text
-        End Select
-    End Sub
-
-    Private Sub DepthSal_OnLostFocus(sender As Object, e As RoutedEventArgs)
-        Dim num = CInt(DepthSal.Text)
-        DepthSal.Text = num.ToString("N0")
-        select case PosConValues.SelectedIndex
-            Case 0 :
-                ResetValues(temparray(33))
-                TempArray(33) += DepthSal.Text
-            Case 1 :
-                ResetValues(temparray(39))
-                TempArray(39) += DepthSal.Text
-            Case 2 :
-                ResetValues(temparray(45))
-                TempArray(45) += DepthSal.Text
-            Case 3 :
-                ResetValues(temparray(51))
-                TempArray(51) += DepthSal.Text
-            Case 4 :
-                ResetValues(temparray(57))
-                TempArray(57) += DepthSal.Text
-            Case 5 :
-                ResetValues(temparray(63))
-                TempArray(63) += DepthSal.Text
-            Case 6 :
-                ResetValues(temparray(69))
-                TempArray(69) += DepthSal.Text
-            Case 7 :
-                ResetValues(temparray(75))
-                TempArray(75) += DepthSal.Text
-            Case 8 :
-                ResetValues(temparray(81))
-                TempArray(81) += DepthSal.Text
-            Case 9 :
-                ResetValues(temparray(87))
-                TempArray(87) += DepthSal.Text
-            Case 10 :
-                ResetValues(temparray(93))
-                TempArray(93) += DepthSal.Text
-            Case 11 :
-                ResetValues(temparray(99))
-                TempArray(99) += DepthSal.Text
-            Case 12 :
-                ResetValues(temparray(105))
-                TempArray(105) += DepthSal.Text
-            Case 13 :
-                ResetValues(temparray(111))
-                TempArray(111) += DepthSal.Text
-            Case 14 :
-                ResetValues(temparray(117))
-                TempArray(117) += DepthSal.Text
-            Case 15 :
-                ResetValues(temparray(123))
-                TempArray(123) += DepthSal.Text
-        End Select
-    End Sub
-
-    Private Sub StartingYear_TextChanged(sender As Object, e As TextChangedEventArgs)
-        SetArray(0) = ResetValues(SetArray(0))
-        SetArray(0) += StartingYear.text
-    End Sub
-
-    Private Sub LeagueRules_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        SetArray(1) = ResetValues(SetArray(1))
-        SetArray(1) += LeagueRules.SelectedItem.Tag.ToString()
-    End Sub
-
-    Private Sub LeagueType_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        SetArray(2) = ResetValues(SetArray(2))
-        SetArray(2) += LeagueType.Selecteditem.tag.ToString()
-    End Sub
-
-    Private Sub RosterSize_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        if setarray(3) <> "" Then
-            SetArray(3) = ResetValues(SetArray(3))
-        end if
-        SetArray(3) += RosterSize.SelectedItem.Tag.ToString()
-    End Sub
-
-    Private Sub GameInactives_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        SetArray(4) = ResetValues(SetArray(4))
-        SetArray(4) += GameInactives.SelectedItem.Tag.ToString()
-    End Sub
-
-    Private Sub PracSquad_OnSelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        SetArray(5) = ResetValues(SetArray(5))
-        SetArray(5) += PracSquad.SelectedItem.Tag.ToString()
-    End Sub
-
-    Private Sub OTFormat_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        SetArray(6) = ResetValues(SetArray(6))
-        SetArray(6) += OTFormat.Selecteditem.tag.ToString()
-    End Sub
-
-    Private Sub FieldType_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        setarray(7) = ResetValues(SetArray(7))
-        SetArray(7) += FieldType.Selecteditem.tag.ToString()
-    End Sub
-
-    Private Sub PenaltyValue_TextChanged(sender As Object, e As TextChangedEventArgs)
-        if SetArray(8) <> "" Then
-            SetArray(8) = ResetValues(SetArray(8))
-        end if
-        SetArray(8) += PenaltyValue.text
-    End Sub
-
-    Private Sub NumTeams_TextChanged(sender As Object, e As TextChangedEventArgs)
-        setarray(9) = ResetValues(SetArray(9))
-        SetArray(9) += NumTeams.Text
-    End Sub
-
-    Private Sub NumConf_TextChanged(sender As Object, e As TextChangedEventArgs)
-        SetArray(10) = ResetValues(SetArray(10))
-        SetArray(10) += NumConf.Text
-    End Sub
-
-    Private Sub NumDivs_TextChanged(sender As Object, e As TextChangedEventArgs)
-        setarray(11) = ResetValues(SetArray(11))
-        SetArray(11) += NumDivs.Text
-    End Sub
-
-    Private Sub ChkBxFantasyDraft_Checked(sender As Object, e As RoutedEventArgs)
-        SetArray(12) = ResetValues(SetArray(12))
-        SetArray(12) += "True"
-    End Sub
-
-    Private Sub ChkBxFantasyDraft_Unchecked(sender As Object, e As RoutedEventArgs)
-        SetArray(12) = ResetValues(SetArray(12))
-        SetArray(12) += "False"
-    End Sub
-
-    Private Sub ChkBxFired_Checked(sender As Object, e As RoutedEventArgs)
-        SetArray(13) = ResetValues(SetArray(13))
-        SetArray(13) += "True"
-    End Sub
-
-    Private Sub ChkBxFired_Unchecked(sender As Object, e As RoutedEventArgs)
-        setarray(13) = ResetValues(SetArray(13))
-        SetArray(13) += "False"
-    End Sub
-
-    Private Sub ChkBxExpansion_Checked(sender As Object, e As RoutedEventArgs)
-        SetArray(14) = ResetValues(SetArray(14))
-        SetArray(14) += "True"
-    End Sub
-
-    Private Sub ChkBxExpansion_Unchecked(sender As Object, e As RoutedEventArgs)
-        SetArray(14) = ResetValues(SetArray(14))
-        SetArray(14) += "False"
-    End Sub
-
-    Private Sub ChkBxRelocation_Checked(sender As Object, e As RoutedEventArgs)
-        SetArray(15) = ResetValues(SetArray(15))
-        SetArray(15) += "True"
-    End Sub
-
-    Private Sub ChkBxRelocation_Unchecked(sender As Object, e As RoutedEventArgs)
-        SetArray(15) = ResetValues(SetArray(15))
-        SetArray(15) += "False"
-    End Sub
-
-    Private Sub ChkBxAllowFA_Checked(sender As Object, e As RoutedEventArgs)
-        SetArray(16) = ResetValues(SetArray(16))
-        SetArray(16) += "True"
-    End Sub
-
-    Private Sub ChkBxAllowFA_Unchecked(sender As Object, e As RoutedEventArgs)
-        SetArray(16) = ResetValues(SetArray(16))
-        SetArray(16) += "False"
-    End Sub
-
-    Private Sub ChkBxCollegeDraft_Checked(sender As Object, e As RoutedEventArgs)
-        SetArray(17) = ResetValues(SetArray(17))
-        SetArray(17) += "True"
-    End Sub
-
-    Private Sub ChkBxCollegeDraft_Unchecked(sender As Object, e As RoutedEventArgs)
-        SetArray(17) = ResetValues(SetArray(17))
-        SetArray(17) += "False"
-    End Sub
-
-    Private Sub NumDraftRounds_TextChanged(sender As Object, e As TextChangedEventArgs)
-        if SetArray(18) <> "" Then
-            SetArray(18) = ResetValues(SetArray(18))
-        end if
-        SetArray(18) += NumDraftRounds.Text
-    End Sub
-
-    Private Sub ChkBxSupDraft_Checked(sender As Object, e As RoutedEventArgs)
-        SetArray(19) = ResetValues(SetArray(19))
-        SetArray(19) += "True"
-    End Sub
-
-    Private Sub ChkBxSupDraft_Unchecked(sender As Object, e As RoutedEventArgs)
-        setarray(19) = ResetValues(SetArray(19))
-        SetArray(19) += "False"
-    End Sub
-
-    Private Sub ChkBxCompPicks_Checked(sender As Object, e As RoutedEventArgs)
-        SetArray(20) = ResetValues(SetArray(20))
-        SetArray(20) += "True"
-    End Sub
-
-    Private Sub ChkBxCompPicks_Unchecked(sender As Object, e As RoutedEventArgs)
-        SetArray(20) = ResetValues(SetArray(20))
-        SetArray(20) += "False"
     End Sub
 
     Private Sub LoadSettings
@@ -704,9 +60,6 @@ Public Class GameSettings
                 DoOnce = True
             end using
         end if
-    End Sub
-
-    Private Sub TabFinances_GotFocus(sender As Object, e As RoutedEventArgs)
     End Sub
 
     private Function ResetValues(tempstring As string) As string
@@ -731,17 +84,171 @@ Public Class GameSettings
         End If
 
         using SW = New StreamWriter(CurDir + "\GLSsettings.text")
-            SW.WriteLine("OVERALL LEAGUE SETTINGS")
+            SW.WriteLine("LEAGUE GAME SETTINGS")
             for i = 0 to SetArray.Count - 1
-                SW.WriteLine(SetArray(i))
+                if SetArray(i) <> "" Then
+                    SetArray(i)=ResetValues(SetArray(i))
+                end if
             Next i
+            SW.WriteLine(String.Format("{0}{1}",SetArray(0),MyVM.MyStartYear))
+            SW.WriteLine(String.Format("{0}{1}",SetArray(1), MYVM.MyLeagueRules))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(2),MyVM.MyLeagueType))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(3),MyVM.MyRosterSize))
+            SW.WriteLine(string.Format("{0}{1}", SetArray(4),MyVM.MyInactives))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(5),MyVM.MyPracSquadSize))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(6),MyVM.MyOTFormat))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(7),MyVM.MyFieldType))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(8),MyVM.MyPenalties))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(9),MyVM.Mynumteams))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(10),MyVM.Mynumconf))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(11),MyVM.Mynumdiv))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(12),MyVM.Myfantasydraft))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(13),MyVM.MyUserFired))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(14),MyVM.MyAllowExpansion))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(15),MyVM.MyAllowRelocation))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(16),MyVM.MyAllowFA))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(17),MyVM.MyAllowDraft))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(18),MyVM.MyNumDraftRounds))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(19),MyVM.AllowSuppDraft))
+            SW.WriteLine(string.Format("{0}{1}",SetArray(20),MyVM.CompPicksForFALoss))
             for i = 0 To TempArray.Count - 1
-                SW.WriteLine(TempArray(i))
+                if temparray(i) <> "" Then
+                    TempArray(i)=ResetValues(TempArray(i))
+                End If               
             Next i
+            SW.Flush()
+            SW.WriteLine("LEAGUE FINANCE SETTINGS")
+            SW.WriteLine(string.format("{0}{1}",TempArray(0),MyVM.MySalCap))
+            SW.WriteLine(string.format("{0}{1}",TempArray(1),MyVM.MySalCapType))
+            SW.WriteLine(string.format("{0}{1}",TempArray(2),MyVM.MyLuxuryTax))
+            SW.WriteLine(string.format("{0}{1}",TempArray(3),MyVM.MyAdjustCap))
+            SW.WriteLine(string.format("{0}{1}",TempArray(4),MyVM.MyRookiePool))
+            SW.WriteLine(string.format("{0}{1}",TempArray(5),MyVM.MyCapCarryOver))
+            SW.WriteLine(string.format("{0}{1}",TempArray(6),MyVM.MyHomeTeamGate))
+            SW.WriteLine(string.format("{0}{1}",TempArray(7),MyVM.MyLeagueSalCap))
+            SW.WriteLine(string.format("{0}{1}",TempArray(8),MyVM.MyShareLuxBoxRev))
+            SW.WriteLine(string.format("{0}{1}",TempArray(9),MyVM.MyShareMerchRev))
+            SW.WriteLine(string.format("{0}{1}",TempArray(10),MyVM._myminconvalue(0)))
+            SW.WriteLine(String.Format("{0}{1}",TempArray(11),MyVM._myminconvalue(1)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(12),MyVM._myminconvalue(2)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(13),MyVM._myminconvalue(3)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(14),MyVM._myminconvalue(4)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(15),MyVM._myminconvalue(5)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(16),MyVM._myminconvalue(6)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(17),MyVM._myminconvalue(7)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(18),MyVM._myminconvalue(8)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(19),MyVM._myminconvalue(9)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(20),MyVM._myminconvalue(10)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(21),MyVM._myminconvalue(11)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(22),MyVM._myminconvalue(12)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(23),MyVM._myminconvalue(13)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(24),MyVM._myminconvalue(14)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(25),MyVM.MyAllowLowerVetMin))
+            SW.WriteLine(string.format("{0}{1}",TempArray(26),MyVM.MyVetMinNumYears))
+            SW.WriteLine(string.format("{0}{1}",TempArray(27),MyVM.MyVetMinContract))
+            SW.Flush
+            SW.WriteLine(string.format("{0}{1}",TempArray(28),MyVM._myfranchise(0)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(29),MyVM._myverygood(0)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(30),MyVM._mygood(0)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(31),MyVM._myaverage(0)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(32),MyVM._mybelowavg(0)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(33),MyVM._mydepth(0)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(34),MyVM._myfranchise(1)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(35),MyVM._myverygood(1)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(36),MyVM._mygood(1)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(37),MyVM._myaverage(1)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(38),MyVM._mybelowavg(1)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(39),MyVM._mydepth(1)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(40),MyVM._myfranchise(2)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(41),MyVM._myverygood(2)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(42),MyVM._mygood(2)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(43),MyVM._myaverage(2)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(44),MyVM._mybelowavg(2)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(45),MyVM._mydepth(2)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(46),MyVM._myfranchise(3)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(47),MyVM._myverygood(3)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(48),MyVM._mygood(3)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(49),MyVM._myaverage(3)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(50),MyVM._mybelowavg(3)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(51),MyVM._mydepth(3)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(52),MyVM._myfranchise(4)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(53),MyVM._myverygood(4)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(54),MyVM._mygood(4)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(55),MyVM._myaverage(4)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(56),MyVM._mybelowavg(4)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(57),MyVM._mydepth(4)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(58),MyVM._myfranchise(5)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(59),MyVM._myverygood(5)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(60),MyVM._mygood(5)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(61),MyVM._myaverage(5)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(62),MyVM._mybelowavg(5)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(63),MyVM._mydepth(5)))
+            SW.Flush
+            SW.WriteLine(string.format("{0}{1}",TempArray(64),MyVM._myfranchise(6)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(65),MyVM._myverygood(6)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(66),MyVM._mygood(6)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(67),MyVM._myaverage(6)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(68),MyVM._mybelowavg(6)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(69),MyVM._mydepth(6)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(70),MyVM._myfranchise(7)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(71),MyVM._myverygood(7)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(72),MyVM._mygood(7)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(73),MyVM._myaverage(7)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(74),MyVM._mybelowavg(7)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(75),MyVM._mydepth(7)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(76),MyVM._myfranchise(8)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(77),MyVM._myverygood(8)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(78),MyVM._mygood(8)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(79),MyVM._myaverage(8)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(80),MyVM._mybelowavg(8)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(81),MyVM._mydepth(8)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(82),MyVM._myfranchise(9)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(83),MyVM._myverygood(9)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(84),MyVM._mygood(9)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(85),MyVM._myaverage(9)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(86),MyVM._mybelowavg(9)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(87),MyVM._mydepth(9)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(88),MyVM._myfranchise(10)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(89),MyVM._myverygood(10)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(90),MyVM._mygood(10)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(91),MyVM._myaverage(10)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(92),MyVM._mybelowavg(10)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(93),MyVM._mydepth(10)))
+            SW.Flush
+            SW.WriteLine(string.format("{0}{1}",TempArray(94),MyVM._myfranchise(11)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(95),MyVM._myverygood(11)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(96),MyVM._mygood(11)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(97),MyVM._myaverage(11)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(98),MyVM._mybelowavg(11)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(99),MyVM._mydepth(11)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(100),MyVM._myfranchise(12)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(101),MyVM._myverygood(12)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(102),MyVM._mygood(12)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(103),MyVM._myaverage(12)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(104),MyVM._mybelowavg(12)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(105),MyVM._mydepth(12)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(106),MyVM._myfranchise(13)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(107),MyVM._myverygood(13)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(108),MyVM._mygood(13)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(109),MyVM._myaverage(13)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(110),MyVM._mybelowavg(13)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(111),MyVM._mydepth(13)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(112),MyVM._myfranchise(14)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(113),MyVM._myverygood(14)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(114),MyVM._mygood(14)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(115),MyVM._myaverage(14)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(116),MyVM._mybelowavg(14)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(117),MyVM._mydepth(14)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(118),MyVM._myfranchise(15)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(119),MyVM._myverygood(15)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(120),MyVM._mygood(15)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(121),MyVM._myaverage(15)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(122),MyVM._mybelowavg(15)))
+            SW.WriteLine(string.format("{0}{1}",TempArray(123),MyVM._mydepth(15)))
+
         end using
     End Sub
-
-
+    
     ''' <summary>
     '''     resets settings to default settings
     ''' </summary>

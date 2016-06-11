@@ -80,13 +80,14 @@
                              Height="Auto"
                              Margin="120,-22,0,0"
                              HorizontalAlignment="Right"
-                             TextChanged="StartingYear_TextChanged" />
+                             Text="{Binding Path=MyStartYear}" />
                     <Label Content="League Rules" />
                     <ComboBox x:Name="LeagueRules"
                               Width="150"
                               Margin="120,-22,0,0"
                               HorizontalAlignment="Right"
-                              SelectionChanged="LeagueRules_SelectionChanged">
+                              Text="{Binding Path=MyLeagueRules,
+                                             Mode=TwoWay}">
                         <ComboBoxItem Content="NFL Rules" Tag="NFL Rules" />
                         <ComboBoxItem Content="CFL Rules" Tag="CFL Rules" />
                         <ComboBoxItem Content="NCAA Rules" Tag="NCAA Rules" />
@@ -98,7 +99,8 @@
                               Height="Auto"
                               Margin="120,-22,0,0"
                               HorizontalAlignment="Right"
-                              SelectionChanged="LeagueType_SelectionChanged">
+                              Text="{Binding Path=MyLeagueType,
+                                             Mode=TwoWay}">
                         <ComboBoxItem x:Name="Career"
                                       Content="Career Simulation"
                                       Tag="Career" />
@@ -115,7 +117,8 @@
                               Height="Auto"
                               Margin="160,-22,0,0"
                               HorizontalAlignment="Right"
-                              SelectionChanged="RosterSize_SelectionChanged">
+                              Text="{Binding Path=MyRosterSize,
+                                             Mode=TwoWay}">
                         <ComboBoxItem Content="60" Tag="60" />
                         <ComboBoxItem Content="59" Tag="59" />
                         <ComboBoxItem Content="58" Tag="58" />
@@ -138,7 +141,8 @@
                               Height="Auto"
                               Margin="180,-22, 0, 0"
                               HorizontalAlignment="Right"
-                              SelectionChanged="GameInactives_SelectionChanged">
+                              Text="{Binding Path=MyInactives,
+                                             Mode=TwoWay}">
                         <ComboBoxItem Content="14" Tag="14" />
                         <ComboBoxItem Content="13" Tag="13" />
                         <ComboBoxItem Content="12" Tag="12" />
@@ -160,7 +164,8 @@
                               Width="130"
                               Margin="150,-22,0,0"
                               HorizontalAlignment="Right"
-                              SelectionChanged="PracSquad_OnSelectionChanged">
+                              Text="{Binding Path=MyPracSquadSize,
+                                             Mode=TwoWay}">
                         <ComboBoxItem Content="0" Tag="0" />
                         <ComboBoxItem Content="1" Tag="1" />
                         <ComboBoxItem Content="2" Tag="2" />
@@ -184,7 +189,8 @@
                               Height="Auto"
                               Margin="140,-22, 0, 0"
                               HorizontalAlignment="Right"
-                              SelectionChanged="OTFormat_SelectionChanged">
+                              Text="{Binding Path=MyOTFormat,
+                                             Mode=TwoWay}">
                         <ComboBoxItem Content="Sudden Death" Tag="Sudden Death" />
                         <ComboBoxItem Content="College Rules" Tag="College OT" />
                         <ComboBoxItem Content="NFL Rules" Tag="NFL OT" />
@@ -197,7 +203,8 @@
                               Width="100"
                               Margin="170,-20,0,0"
                               HorizontalAlignment="Right"
-                              SelectionChanged="FieldType_SelectionChanged">
+                              Text="{Binding Path=MyFieldType,
+                                             Mode=TwoWay}">
                         <ComboBoxItem Content="NFL Field" Tag="NFL Field" />
                         <ComboBoxItem Content="CFL Field" Tag="CFL Field" />
                         <ComboBoxItem Content="College Field" Tag="College Field" />
@@ -212,7 +219,9 @@
                             Margin="30,-20,0,0"
                             IsSnapToTickEnabled="True"
                             Maximum="100"
-                            TickPlacement="BottomRight" />
+                            TickPlacement="BottomRight"
+                            Value="{Binding Path=MyPenalties,
+                                            Mode=TwoWay}" />
                     <TextBox x:Name="PenaltyValue"
                              Width="40"
                              Margin="240,-25,0,0"
@@ -221,68 +230,70 @@
                              Text="{Binding ElementName=PenaltySlider,
                                             Path=Value,
                                             UpdateSourceTrigger=PropertyChanged}"
-                             TextAlignment="Center"
-                             TextChanged="PenaltyValue_TextChanged" />
+                             TextAlignment="Center" />
                     <Label Content="# of Teams" />
                     <TextBox x:Name="NumTeams"
                              Width="40"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
                              FontSize="18"
-                             TextAlignment="Center"
-                             TextChanged="NumTeams_TextChanged" />
+                             Text="{Binding Path=MyNumTeams,
+                                            Mode=TwoWay}"
+                             TextAlignment="Center" />
                     <Label Content="# of Conferences" />
                     <TextBox x:Name="NumConf"
                              Width="40"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
                              FontSize="18"
-                             TextAlignment="Center"
-                             TextChanged="NumConf_TextChanged" />
+                             Text="{Binding Path=MyNumConf,
+                                            Mode=TwoWay}"
+                             TextAlignment="Center" />
                     <Label Content="# of Divsions" />
                     <TextBox x:Name="NumDivs"
                              Width="40"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
                              FontSize="18"
-                             TextAlignment="Center"
-                             TextChanged="NumDivs_TextChanged" />
+                             Text="{Binding Path=MyNumDiv,
+                                            Mode=TwoWay}"
+                             TextAlignment="Center" />
                     <CheckBox x:Name="ChkBxFantasyDraft"
                               Margin="0,10,0,0"
                               HorizontalAlignment="Left"
-                              Checked="ChkBxFantasyDraft_Checked"
                               Content="Start With Fantasy Draft?"
-                              Unchecked="ChkBxFantasyDraft_Unchecked" />
+                              IsChecked="{Binding Path=MyFantasyDraft,
+                                                  Mode=TwoWay}" />
                     <CheckBox x:Name="ChkBxFired"
                               Margin="0,10,0,0"
                               HorizontalAlignment="Left"
-                              Checked="ChkBxFired_Checked"
                               Content="User Can be Fired"
-                              Unchecked="ChkBxFired_Unchecked" />
+                              IsChecked="{Binding Path=MyUserFired,
+                                                  Mode=TwoWay}" />
                     <CheckBox x:Name="ChkBxExpansion"
                               Margin="0,10,0,0"
                               HorizontalAlignment="Left"
-                              Checked="ChkBxExpansion_Checked"
                               Content="Allow Expansion?"
-                              Unchecked="ChkBxExpansion_Unchecked" />
+                              IsChecked="{Binding Path=MyAllowExpansion,
+                                                  Mode=TwoWay}" />
                     <CheckBox x:Name="ChkBxRelocation"
                               Margin="0,10,0,0"
                               HorizontalAlignment="Left"
-                              Checked="ChkBxRelocation_Checked"
                               Content="Allow Relocation?"
-                              Unchecked="ChkBxRelocation_Unchecked" />
+                              IsChecked="{Binding Path=MyAllowRelocation,
+                                                  Mode=TwoWay}" />
                     <CheckBox x:Name="ChkBxAllowFA"
                               Margin="0,10,0,0"
                               HorizontalAlignment="Left"
-                              Checked="ChkBxAllowFA_Checked"
                               Content="Allow Free Agency?"
-                              Unchecked="ChkBxAllowFA_Unchecked" />
+                              IsChecked="{Binding Path=MyAllowFA,
+                                                  Mode=TwoWay}" />
                     <CheckBox x:Name="ChkBxCollegeDraft"
                               Margin="0,10,0,0"
                               HorizontalAlignment="Left"
-                              Checked="ChkBxCollegeDraft_Checked"
                               Content="Allow Yearly College Draft?"
-                              Unchecked="ChkBxCollegeDraft_Unchecked" />
+                              IsChecked="{Binding Path=MyAllowDraft,
+                                                  Mode=TwoWay}" />
                     <Label Margin="0,10,0,0"
                            HorizontalAlignment="Left"
                            Content="Number Of Draft Rounds" />
@@ -290,21 +301,21 @@
                              Width="30"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
-                             Text="7"
-                             TextAlignment="Center"
-                             TextChanged="NumDraftRounds_TextChanged" />
+                             Text="{Binding Path=MyNumDraftRounds,
+                                            Mode=TwoWay}"
+                             TextAlignment="Center" />
                     <CheckBox x:Name="ChkBxSupDraft"
                               Margin="0,10,0,0"
                               HorizontalAlignment="Left"
-                              Checked="ChkBxSupDraft_Checked"
                               Content="Hold Supplemental Draft?"
-                              Unchecked="ChkBxSupDraft_Unchecked" />
+                              IsChecked="{Binding Path=AllowSuppDraft,
+                                                  Mode=TwoWay}" />
                     <CheckBox x:Name="ChkBxCompPicks"
                               Margin="0,10,0,0"
                               HorizontalAlignment="Left"
-                              Checked="ChkBxCompPicks_Checked"
                               Content="Compensatory Picks for FA Losses?"
-                              Unchecked="ChkBxCompPicks_Unchecked" />
+                              IsChecked="{Binding Path=CompPicksForFALoss,
+                                                  Mode=TwoWay}" />
                     <Button x:Name="AcceptBtn"
                             Width="100"
                             Height="Auto"
@@ -329,74 +340,67 @@
                      VerticalAlignment="Top"
                      FontFamily="Motorwerk Bold"
                      FontSize="14"
-                     GotFocus="TabFinances_GotFocus"
                      Header="League Finances">
                 <StackPanel Margin="0,20,0,0" HorizontalAlignment="Left">
                     <CheckBox x:Name="ChkBxSalCap"
-                              Checked="ChkBxSalCap_Checked"
                               Content="Enable Salary Cap?"
-                              Unchecked="ChkBxSalCap_Unchecked" />
+                              IsChecked="{Binding Path=MySalCap}" />
                     <Label Content="Salary Cap Type:" />
                     <ComboBox x:Name="SalCapType"
                               Width="120"
                               Margin="260,-25,0,0"
                               HorizontalAlignment="Right"
-                              SelectedValuePath="Content"
-                              SelectionChanged="SalCapType_SelectionChanged">
+                              Text="{Binding Path=MySalCapType}">
                         <ComboBoxItem Content="Hard Cap" Tag="Hard Cap" />
                         <ComboBoxItem Content="Soft Cap" Tag="Soft Cap" />
                     </ComboBox>
                     <CheckBox x:Name="ChkBxLuxTax"
                               Margin="0,10,0,0"
-                              Checked="ChkBxLuxTax_Checked"
                               Content="Luxury Tax For Going Over Cap?"
-                              Unchecked="ChkBxLuxTax_Unchecked" />
+                              IsChecked="{Binding Path=MyLuxuryTax}" />
                     <CheckBox x:Name="ChkBxAdjustCap"
                               Margin="0,10,0,0"
-                              Checked="ChkBxAdjustCap_Checked"
                               Content="Auto Adjust Cap Based On League revenues?"
-                              Unchecked="ChkBxAdjustCap_Unchecked" />
+                              IsChecked="{Binding Path=MyAdjustCap}" />
                     <CheckBox x:Name="ChkBxRookiePool"
                               Margin="0,10,0,0"
-                              Checked="ChkBxRookiePool_Checked"
                               Content="Use Rookie Pool CBA as Basis for Draft Pick Contracts?"
-                              Unchecked="ChkBxRookiePool_Unchecked" />
+                              IsChecked="{Binding Path=MyRookiePool}" />
                     <CheckBox x:Name="ChkBxCapCarryover"
                               Margin="0,10,0,0"
-                              Checked="ChkBxCapCarryover_Checked"
                               Content="Allow Unused Cap Dollars To Carryover To Next Year?"
-                              Unchecked="ChkBxCapCarryover_Unchecked" />
+                              IsChecked="{Binding Path=MyCapCarryOver}" />
                     <Label Margin="0,10,0,0" Content="Home Team Percentage of Gate Revenue" />
                     <TextBox x:Name="GateRev"
                              Width="50"
                              Margin="330,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="GateRev_OnLostFocus"
+                             Text="{Binding Path=MyHomeTeamGate}"
                              TextAlignment="Center" />
                     <Label Margin="0,10,0,0" Content="League Salary Cap" />
                     <TextBox x:Name="LgSalCap"
                              Width="100"
                              Margin="260,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="LgSalCap_OnLostFocus"
+                             Text="{Binding Path=MyLeagueSalCap}"
                              TextAlignment="Center" />
                     <CheckBox x:Name="ChkBxLuxBoxSharedRev"
                               Margin="0,10,0,0"
                               HorizontalAlignment="Left"
-                              Checked="ChkBxLuxBoxSharedRev_Checked"
                               Content="Share Luxury Box Revenue Among Teams"
-                              Unchecked="ChkBxLuxBoxSharedRev_Unchecked" />
+                              IsChecked="{Binding Path=MyShareLuxBoxRev}" />
                     <CheckBox x:Name="ChkBxShareMerchRev"
                               Margin="0,10,0,0"
                               HorizontalAlignment="Left"
-                              Checked="ChkBxShareMerchRev_Checked"
                               Content="Share Merchandise Revenue Among Teams"
-                              Unchecked="ChkBxShareMerchRev_Unchecked" />
+                              IsChecked="{Binding Path=MyShareMerchRev}" />
                     <Label Content="Minimum Contract Value Based on Experience:" />
                     <ComboBox x:Name="MinConExp"
                               Width="100"
                               Margin="0,10,0,0"
-                              HorizontalAlignment="Left">
+                              HorizontalAlignment="Left"
+                              SelectedIndex="{Binding Path=MyPosConMin,
+                                                      Mode=TwoWay}">
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="0"
                                       Tag="0" />
@@ -440,131 +444,129 @@
                                       Content="13"
                                       Tag="13" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
-                                      Content="14"
+                                      Content="14+"
                                       Tag="14" />
-                        <ComboBoxItem HorizontalContentAlignment="Center"
-                                      Content="15+"
-                                      Tag="15+" />
                     </ComboBox>
                     <TextBox x:Name="MinSal"
                              Width="120"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="MinSal_OnLostFocus"
+                             Text="{Binding Path=MyMinConValue}"
                              TextAlignment="Center" />
                     <CheckBox x:Name="ChkBxAllowVetDisc"
                               Margin="0,10,0,0"
-                              Checked="ChkBxAllowVetDisc_Checked"
                               Content="Allow Veteran Min Contract At Lower Cap Number"
-                              Unchecked="ChkBxAllowVetDisc_Unchecked" />
+                              IsChecked="{Binding Path=MyAllowLowerVetMin}" />
                     <Label Margin="0,10,0,0" Content="Minimum Years Exp To Be Eligible" />
                     <TextBox x:Name="MinExp"
                              Width="120"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="MinExp_OnLostFocus"
+                             Text="{Binding Path=MyVetMinNumYears}"
                              TextAlignment="Center" />
                     <Label Content="Contract Cap Hit Becomes" />
                     <TextBox x:Name="VetMinConCapHit"
                              Width="120"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="VetMinConCapHit_OnLostFocus"
+                             Text="{Binding Path=MyVetMinContract}"
                              TextAlignment="Center" />
                     <Label Content="Positional Contract Values:" />
                     <ComboBox x:Name="PosConValues"
                               Width="100"
-                              HorizontalAlignment="Center">
+                              HorizontalAlignment="Center"
+                              SelectedIndex="{Binding Path=MyPosition,
+                                                      Mode=TwoWay}">
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="QB"
-                                      Tag="QB" />
+                                      Tag="0" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="RB"
-                                      Tag="RB" />
+                                      Tag="1" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="FB"
-                                      Tag="RB" />
+                                      Tag="2" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="WR"
-                                      Tag="WR" />
+                                      Tag="3" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="TE"
-                                      Tag="TE" />
+                                      Tag="4" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="OT"
-                                      Tag="OT" />
+                                      Tag="5" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="OG"
-                                      Tag="OG" />
+                                      Tag="6" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="C"
-                                      Tag="C" />
+                                      Tag="7" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="DE"
-                                      Tag="DE" />
+                                      Tag="8" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="DT"
-                                      Tag="DT" />
+                                      Tag="9" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="OLB"
-                                      Tag="OLB" />
+                                      Tag="10" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="ILB"
-                                      Tag="ILB" />
+                                      Tag="11" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="FS"
-                                      Tag="FS" />
+                                      Tag="12" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="SS"
-                                      Tag="SS" />
+                                      Tag="13" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="K"
-                                      Tag="K" />
+                                      Tag="14" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="P"
-                                      Tag="P" />
+                                      Tag="15" />
                     </ComboBox>
                     <Label Content="Franchise Player" />
                     <TextBox x:Name="FranSal"
                              Width="120"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="FranSal_OnLostFocus"
+                             Text="{Binding Path=MyFranchise}"
                              TextAlignment="Center" />
                     <Label Content="Very Good Player" />
                     <TextBox x:Name="VeryGoodSal"
                              Width="120"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="VeryGoodSal_OnLostFocus"
+                             Text="{Binding Path=MyVeryGood}"
                              TextAlignment="Center" />
                     <Label Content="Good Player" />
                     <TextBox x:Name="GoodSal"
                              Width="120"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="GoodSal_OnLostFocus"
+                             Text="{Binding Path=MyGood}"
                              TextAlignment="Center" />
                     <Label Content="Average Player" />
                     <TextBox x:Name="AvgSal"
                              Width="120"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="AvgSal_OnLostFocus"
+                             Text="{Binding Path=MyAverage}"
                              TextAlignment="Center" />
                     <Label Content="Backup Player" />
                     <TextBox x:Name="BackUpSal"
                              Width="120"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="BackUpSal_OnLostFocus"
+                             Text="{Binding Path=MyBelowAvg}"
                              TextAlignment="Center" />
                     <Label Content="Depth Player" />
                     <TextBox x:Name="DepthSal"
                              Width="120"
                              Margin="240,-25,0,0"
                              HorizontalAlignment="Right"
-                             LostFocus="DepthSal_OnLostFocus"
+                             Text="{Binding Path=MyDepth}"
                              TextAlignment="Center" />
                     <Button x:Name="LgFinAcceptBtn"
                             Width="100"

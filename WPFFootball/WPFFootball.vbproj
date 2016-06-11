@@ -104,6 +104,7 @@
     <Compile Include="GameSettings.xaml.vb">
       <DependentUpon>GameSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameSettingsViewModel.vb" />
     <Compile Include="NewGameViewModel.vb" />
     <Compile Include="HomeScreen.xaml.vb">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
@@ -111,7 +112,6 @@
     <Compile Include="NewGame.xaml.vb">
       <DependentUpon>NewGame.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SettingsUI.vb" />
     <Compile Include="UserScreen.xaml.vb">
       <DependentUpon>UserScreen.xaml</DependentUpon>
     </Compile>

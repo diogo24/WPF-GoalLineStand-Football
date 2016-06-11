@@ -74,6 +74,7 @@
                                Margin="0,0,0,0"
                                VerticalAlignment="Top"
                                Opacity="0.7"
+                               Source="{Binding Path=MyHelmet}"
                                Stretch="Fill" />
                         <TextBlock x:Name="HelmetText"
                                    Margin="0,-120,0,0"
