@@ -1,22 +1,63 @@
-﻿Imports Microsoft.Win32
+﻿Imports System.Globalization
+Imports Microsoft.Win32
+Imports WPFFootball.My.Resources
 
 Public Class UserScreen
     Dim ReadOnly myTeam as integer
+    Dim ReadOnly MyVM as new UserScreenViewModel
+    dim myList as New List(Of String)
+    Dim myRand as new Troschuetz.Random.TRandom
 
     ''' <summary>
     '''     TeamID gets the the team the user selected when creating the window passed in as a parameter
     ''' </summary>
     ''' <param name="TeamID"></param>
     Sub New(TeamID As integer)
+        Dim filepath = "pack://application:,,,/Project Files/"
+        dim myNum as integer
 
         ' This call is required by the designer.
-        InitializeComponent()
-        GridBackground.ImageSource= New BitmapImage(New Uri(NewGameViewModel.GetBackgroundFilePath(TeamID),
-                                                             UriKind.RelativeOrAbsolute))
+        InitializeComponent()   
         ' Add any initialization after the InitializeComponent() call.
-        myTeam = TeamID
+
+        DataContext=MyVM   
+        myTeam = TeamID   
+        LoadPics(myteam)
+        
+        myNum=myRand.NextUInt(0,myList.Count-1)       
+        MyVM.Image1=New BitmapImage(New Uri(filepath+ResourceManager.GetObject(myList(myNum),CultureInfo.InvariantCulture).ToString(),UriKind.RelativeOrAbsolute))
+        myList.Removeat(myNum)    
+        myNum=myRand.NextUInt(0,myList.Count-1)  
+        MyVM.Image2=New BitmapImage(New Uri(filepath+ResourceManager.GetObject(myList(myNum),CultureInfo.InvariantCulture).ToString(),UriKind.RelativeOrAbsolute))
+        myList.RemoveAt(myNum)
+        myNum=myRand.NextUInt(0,myList.Count-1)
+        MyVM.Image3=New BitmapImage(New Uri(filepath+ResourceManager.GetObject(myList(myNum),CultureInfo.InvariantCulture).ToString(),UriKind.RelativeOrAbsolute))
+        myList.RemoveAt(myNum)
+        myNum=myRand.NextUInt(0,myList.Count-1)
+        MyVM.Image4=New BitmapImage(New Uri(filepath+ResourceManager.GetObject(myList(myNum),CultureInfo.InvariantCulture).ToString(),UriKind.RelativeOrAbsolute)) 
+        myList.RemoveAt(myNum)
+        myNum=myRand.NextUInt(0,myList.Count-1)
+        MyVM.Image5=New BitmapImage(New Uri(filepath+ResourceManager.GetObject(myList(myNum),CultureInfo.InvariantCulture).ToString(),UriKind.RelativeOrAbsolute))
+        
     End Sub
 
+    Private function LoadPics(byval TeamID) As List(Of string)
+        Dim dictEntry as new DictionaryEntry
+        Dim runTimeResourceSet as Object
+        dim teamNick as String=NewGame.TeamDT.Rows(TeamID).Item("TeamNickname")
+
+        runTimeResourceSet=My.Resources.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture,False,True)
+
+        for each dictEntry In runTimeResourceSet
+            myRand.NextUInt()
+            if dictEntry.Key.ToString().StartsWith(teamNick) then
+                myList.Add(dictEntry.key)
+            end if
+              
+        Next dictEntry
+
+        return myList
+    End function
     ''' <summary>
     '''     Loads Game from file
     ''' </summary>

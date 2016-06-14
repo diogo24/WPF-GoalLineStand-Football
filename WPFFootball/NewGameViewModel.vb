@@ -217,6 +217,7 @@ Public Class NewGameViewModel
         <Description("San Francisco 49ers")> SFO = 32
     End Enum
 
+   
 # End Region
 
     ''' <summary>
@@ -228,38 +229,38 @@ Public Class NewGameViewModel
         Dim filepath = "pack://application:,,,/Project Files/"
 
         Select Case TeamNum
-            Case 0 : filepath += Buffalo_Bills02Jpg
-            Case 1 : filepath += New_England_Patriots2Jpg
-            Case 2 : filepath += New_York_JetsJpg
-            Case 3 : filepath += Miami_Dolphins_2013Jpg
-            Case 4 : filepath += Cincinnati_Bengals3Jpg
-            Case 5 : filepath += Pittsburgh_Steelers2Jpg
-            Case 6 : filepath += Baltimore_Ravens3Jpg
-            Case 7 : filepath += Cleveland_Browns2Jpg1
-            Case 8 : filepath += Houston_Texans2Jpg
-            Case 9 : filepath += Indianapolis_Colts2Jpg
-            Case 10 : filepath += Jacksonville_Jaguars2Jpg
-            Case 11 : filepath += Tennessee_Titans2Jpg
-            Case 12 : filepath += Denver_Broncos2Jpg
-            Case 13 : filepath += Kansas_City_Chiefs3Jpg
-            Case 14 : filepath += Oakland_RaidersJpg
-            Case 15 : filepath += San_Diego_Chargers5Jpg
-            case 16 : filepath += Washington_Redskins2Jpg
-            case 17 : filepath += Philadelphia_Eagles2Jpg
-            case 18 : filepath += New_York_Giants5Jpg
-            case 19 : filepath += Dallas_Cowboys3Jpg
-            case 20 : filepath += Minnesota_Vikings_2013_06Jpg
-            case 21 : filepath += Green_Bay_Packers5Jpg
-            case 22 : filepath += DetroitLions2Jpg
-            case 23 : filepath += Chicago_Bears4Jpg
-            Case 24 : filepath += Carolina_Panthers2Jpg
-            case 25 : filepath += Atlanta_FalconsJpg
-            case 26 : filepath += New_Orleans_Saints2Jpg
-            case 27 : filepath += Tampa_Bay_Buccaneers2Jpg
-            case 28 : filepath += ArizonaCardinals3Jpg
-            case 29 : filepath += Seattle_Seahawks2_2012Jpg
-            case 30 : filepath += LARamsJpg
-            case 31 : filepath += San_Francisco_49ers04Jpg
+            Case 0 : filepath += Bills02Jpg
+            Case 1 : filepath += Patriots2Jpg
+            Case 2 : filepath += JetsJpg
+            Case 3 : filepath += Dolphins_2013Jpg
+            Case 4 : filepath += Bengals3Jpg
+            Case 5 : filepath += Steelers2Jpg
+            Case 6 : filepath += Ravens3Jpg
+            Case 7 : filepath += Browns2Jpg1
+            Case 8 : filepath += Texans2Jpg
+            Case 9 : filepath += Colts2Jpg
+            Case 10 : filepath += Jaguars2Jpg
+            Case 11 : filepath += Titans2Jpg
+            Case 12 : filepath += Broncos2Jpg
+            Case 13 : filepath += Chiefs3Jpg
+            Case 14 : filepath += RaidersJpg
+            Case 15 : filepath += Chargers5Jpg
+            case 16 : filepath += Redskins2Jpg
+            case 17 : filepath += Eagles2Jpg
+            case 18 : filepath += Giants5Jpg
+            case 19 : filepath += Cowboys3Jpg
+            case 20 : filepath += Vikings_2013_06Jpg
+            case 21 : filepath += Packers5Jpg
+            case 22 : filepath += Lions2Jpg
+            case 23 : filepath += Bears4Jpg
+            Case 24 : filepath += Panthers2Jpg
+            case 25 : filepath += FalconsJpg
+            case 26 : filepath += Saints2Jpg
+            case 27 : filepath += Buccaneers2Jpg
+            case 28 : filepath += Cardinals3Jpg
+            case 29 : filepath += Seahawks2_2012Jpg
+            case 30 : filepath += RamsJpg
+            case 31 : filepath += _49ers04Jpg
             case 32 : filepath += GlobalClass_GetBackgroundFilePath_FootballGoalLine_jpg
         End Select
 
@@ -277,38 +278,38 @@ Public Class NewGameViewModel
         Dim filepath = "Project Files/"
 
         Select Case TeamNum
-            Case 0 : filepath += Buffalo_Bills_PHelmet_2011Jpg
-            Case 1 : filepath += New_England_Patriots_PHelmetJpg
-            Case 2 : filepath += New_York_Jets_PHelmetJpg
-            Case 3 : filepath += Miami_Dolphins_PHelmetJpg
-            Case 4 : filepath += Cincinnati_Bengals_PHelmetJpg
-            Case 5 : filepath += Pittsburgh_Steelers_PHelmetJpg
-            Case 6 : filepath += Baltimore_Ravens_PHelmetJpg
-            Case 7 : filepath += Cleveland_Browns_PHelmetJpg
-            Case 8 : filepath += Houston_Texans_PHelmetJpg
-            Case 9 : filepath += Indianapolis_Colts_PHelmetJpg
-            Case 10 : filepath += Jacksonville_Jaguars_PHelmetJpg
-            Case 11 : filepath += Tennessee_Titans_PHelmetJpg
-            Case 12 : filepath += Denver_Broncos_PHelmetJpg
-            Case 13 : filepath += Kansas_City_Chiefs_PHelmetJpg
-            Case 14 : filepath += Oakland_Raiders_HelmetJpg
-            Case 15 : filepath += San_Diego_Chargers_PHelmet2Jpg
-            Case 16 : filepath += Washington_Redskins_PHelmetJpg
-            Case 17 : filepath += Philadelphia_Eagles_PHelmetJpg
-            Case 18 : filepath += New_York_Giants_PHelmetJpg
-            Case 19 : filepath += Dallas_Cowboys_PhelmetJpg
-            Case 20 : filepath += Minnesota_Vikings_PHelmet_2013Jpg
-            Case 21 : filepath += Green_Bay_Packers_PHelmetJpg
-            Case 22 : filepath += Detroit_Lions_PHelmetJpg
-            Case 23 : filepath += Chicago_Bears_PHelmet2Jpg
-            Case 24 : filepath += Carolina_Panthers_PHelmetJpg
-            Case 25 : filepath += Atlanta_Falcons_PHelmetJpg
-            Case 26 : filepath += New_Orleans_Saints_PHelmetJpg
-            Case 27 : filepath += Tampa_Bay_Buccaneers_PHelmetJpg
-            Case 28 : filepath += Arizona_Cardinals_HelmetJpg
-            Case 29 : filepath += Seattle_Seahawks_PHelmet_2012Jpg
-            Case 30 : filepath += LARams1Png
-            Case 31 : filepath += San_Francisco_49ers_PHelmet_NewJpg
+            Case 0 : filepath += Bills_PHelmet_2011Jpg
+            Case 1 : filepath += Patriots_PHelmetJpg
+            Case 2 : filepath += Jets_PHelmetJpg
+            Case 3 : filepath += Dolphins_PHelmetJpg
+            Case 4 : filepath += Bengals_PHelmetJpg
+            Case 5 : filepath += Steelers_PHelmetJpg
+            Case 6 : filepath += Ravens_PHelmetJpg
+            Case 7 : filepath += Browns_PHelmetJpg
+            Case 8 : filepath += Texans_PHelmetJpg
+            Case 9 : filepath += Colts_PHelmetJpg
+            Case 10 : filepath += Jaguars_PHelmetJpg
+            Case 11 : filepath += Titans_PHelmetJpg
+            Case 12 : filepath += Broncos_PHelmetJpg
+            Case 13 : filepath += Chiefs_PHelmetJpg
+            Case 14 : filepath += Raiders_HelmetJpg
+            Case 15 : filepath += Chargers_PHelmet2Jpg
+            Case 16 : filepath += Redskins_PHelmetJpg
+            Case 17 : filepath += Eagles_PHelmetJpg
+            Case 18 : filepath += Giants_PHelmetJpg
+            Case 19 : filepath += Cowboys_PhelmetJpg
+            Case 20 : filepath += Vikings_PHelmet_2013Jpg
+            Case 21 : filepath += Packers_PHelmetJpg
+            Case 22 : filepath += Lions_PHelmetJpg
+            Case 23 : filepath += Bears_PHelmet2Jpg
+            Case 24 : filepath += Panthers_PHelmetJpg
+            Case 25 : filepath += Falcons_PHelmetJpg
+            Case 26 : filepath += Saints_PHelmetJpg
+            Case 27 : filepath += Buccaneers_PHelmetJpg
+            Case 28 : filepath += Cardinals_HelmetJpg
+            Case 29 : filepath += Seahawks_PHelmet_2012Jpg
+            Case 30 : filepath += Rams1Png
+            Case 31 : filepath += _49ers_PHelmet_NewJpg
         End Select
         MyImage.Source = New BitmapImage(New Uri(filepath, UriKind.Relative))
         Return MyImage

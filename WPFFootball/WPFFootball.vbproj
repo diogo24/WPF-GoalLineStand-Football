@@ -57,6 +57,10 @@
       <HintPath>..\packages\DevExpressMvvm.15.2.5.0\lib\net40-client\DevExpress.Mvvm.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="dotMemory.Unit, Version=103.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.dotMemoryUnit.2.3.20160517.113140\lib\dotMemory.Unit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
@@ -78,6 +82,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -115,6 +120,7 @@
     <Compile Include="UserScreen.xaml.vb">
       <DependentUpon>UserScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserScreenViewModel.vb" />
     <Page Include="GameSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -192,6 +198,50 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="footballfield.jpg" />
+    <Resource Include="Project Files\BillsFans.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Project Files\BillsMcCoy.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Project Files\BillsPassRush.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Project Files\BillsFans2.jpg" />
+    <Resource Include="Project Files\BillsFans3.jpg" />
+    <Resource Include="Project Files\BillsGreats.jpg" />
+    <Resource Include="Project Files\BillsLondon.jpg" />
+    <Resource Include="Project Files\BillsMcCoy2.jpg" />
+    <Resource Include="Project Files\BillsOneBuffalo.jpg" />
+    <Resource Include="Project Files\BillsTaylor.jpg" />
+    <Resource Include="Project Files\BillsWatkinsTaylor.jpg" />
+    <Resource Include="Project Files\DolphinsCelebrate.JPG" />
+    <Resource Include="Project Files\DolphinsGreats.jpg" />
+    <Resource Include="Project Files\DolphinsMiller.jpg" />
+    <Resource Include="Project Files\DolphinsPreSnap.jpg" />
+    <Resource Include="Project Files\DolphinsStadium.jpg" />
+    <Resource Include="Project Files\DolphinsTannehill.jpg" />
+    <Resource Include="Project Files\DolphinsTrainingCamp.jpg" />
+    <Resource Include="Project Files\JetsDecker.jpg" />
+    <Resource Include="Project Files\JetsFans.jpg" />
+    <Resource Include="Project Files\JetsIvory.jpg" />
+    <Resource Include="Project Files\JetsMarshall.jpg" />
+    <Resource Include="Project Files\JetsOverPile.jpg" />
+    <Resource Include="Project Files\JetsTouchdown2.jpg" />
+    <Resource Include="Project Files\JetsTunnel.jpg" />
+    <Resource Include="Project Files\JetsWallpaper.jpg" />
+    <Resource Include="Project Files\PatriotsBelichick.jpg" />
+    <Resource Include="Project Files\PatriotsBrady.jpg" />
+    <Resource Include="Project Files\PatriotsBradyGronk.jpg" />
+    <Resource Include="Project Files\PatriotsCelebrate.jpg" />
+    <Resource Include="Project Files\PatriotsDefense.jpg" />
+    <Resource Include="Project Files\PatriotsEdelman.jpg" />
+    <Resource Include="Project Files\PatriotsFans.jpg" />
+    <Resource Include="Project Files\PatriotsGreats.jpg" />
+    <Resource Include="Project Files\PatriotsGronk.jpg" />
+    <Resource Include="Project Files\PatriotsReceivers.jpg" />
+    <Resource Include="Project Files\PatriotsSuperBowl.jpg" />
+    <Resource Include="Project Files\PatriotsTunnel.jpg" />
     <Content Include="Project Files\Schedule4GamesMax.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

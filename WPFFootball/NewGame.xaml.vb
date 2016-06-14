@@ -6,8 +6,8 @@ Imports System.Text.RegularExpressions
 Imports SQLFunctions
 Imports Troschuetz.Random
 Public Class NewGame
-    private ReadOnly SQLTable as New SQLiteDataFunctions
-    private Shared ReadOnly TeamDT as new DataTable
+    private Readonly SQLTable as New SQLiteDataFunctions
+    public Shared  TeamDT as new DataTable
     private ReadOnly OwnerDT as new DataTable
     private ReadOnly PersonnelDT as new Datatable
     private ReadOnly CoachDT as new Datatable

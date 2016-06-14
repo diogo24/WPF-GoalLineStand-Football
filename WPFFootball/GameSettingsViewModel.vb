@@ -1,22 +1,27 @@
-﻿Imports System.Collections.ObjectModel
-Imports System.ComponentModel
-Imports System.Data
+﻿Imports System.ComponentModel
+Imports System.Globalization
+
 Public Class GameSettingsViewModel
     Inherits NewGameViewModel
     Implements INotifyPropertyChanged
-    
+
     Public Sub New()
 
     End Sub
 
 #Region "INotifyProperyChanged"
-       Public Shadows Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
+
+    Public Shadows Event PropertyChanged As PropertyChangedEventHandler _
+        Implements INotifyPropertyChanged.PropertyChanged
 
     private Sub OnPropertyChanged(name As String)
         RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(name))
     End Sub
+
 #End Region
+
 #Region "Private Variables"
+
     Private _mystartyear as string
     Private _myleaguerules as string
     Private _myleaguetype as string
@@ -45,417 +50,460 @@ Public Class GameSettingsViewModel
     Private _myrookiepool as Boolean
     Private _mycapcarryover as Boolean
     Private _myhometeamgate as String
-    private _myleaguesalcap as String
+    private _myleaguesalcap as Integer
     Private _myshareluxboxrev as Boolean
     Private _mysharemerchrev as Boolean
     Private _myposconmin as integer
-    Public  _myminconvalue(14) as String
     private _myallowlowervetmin as Boolean
     private _myvetminnumyears as String
-    private _myvetmincontract as String
+    private _myvetmincontract as integer
     Private _myposition as integer
-    Public _myfranchise(15) as String
-    Public _myverygood(15) as String
-    Public _mygood(15) as String
-    Public _myaverage(15) as string
-    Public _mybelowavg(15) as String
-    Public _mydepth(15) as string
 
 #End Region
+
+#Region "Public Array Variables"
+
+    Public _myminconvalue(14) as integer
+    Public _myfranchise(15) as integer
+    Public _myverygood(15) as integer
+    Public _mygood(15) as integer
+    Public _myaverage(15) as integer
+    Public _mybelowavg(15) as integer
+    Public _mydepth(15) as integer
+
+#End Region
+
 #Region "Public Properties"
+
     public Property MyStartYear As String
-    Get
+        Get
             return _mystartyear
-    End Get
-        Set(value As String)
-            _mystartyear=value
+        End Get
+        Set
+            _mystartyear = value
             OnPropertyChanged("MyStartYear")
         End Set
     End Property
+
     Public Property MyLeagueRules As String
-    Get
+        Get
             return _myleaguerules
-    End Get
-        Set(value As String)
-            _myleaguerules=value
+        End Get
+        Set
+            _myleaguerules = value
             OnPropertyChanged("MyLeagueRules")
         End Set
     End Property
+
     Public Property MyLeagueType As String
-    Get
+        Get
             return _myleaguetype
-    End Get
-        Set(value As String)
-            _myleaguetype=value
+        End Get
+        Set
+            _myleaguetype = value
             OnPropertyChanged("MyLeagueType")
         End Set
     End Property
+
     Public Property MyRosterSize as String
-    get
+        get
             return _myrostersize
-    End Get
-        Set(value as String)
-            _myrostersize=value
+        End Get
+        Set
+            _myrostersize = value
             OnPropertyChanged("MyRosterSize")
         End Set
     End Property
+
     Public Property MyInactives As String
-    get
+        get
             Return _myinactives
-    End Get
-        Set(value As String)
-            _myinactives=value
+        End Get
+        Set
+            _myinactives = value
             OnPropertyChanged("MyInactives")
         End Set
     End Property
+
     Public Property MyPracSquadSize as String
-    Get
+        Get
             Return _mypracsquadsize
-    End Get
-        Set(value as String)
-            _mypracsquadsize=value
+        End Get
+        Set
+            _mypracsquadsize = value
             OnPropertyChanged("MyPracSquadSize")
         End Set
     End Property
+
     Public Property MyOTFormat As String
-    get
+        get
             return _myotformat
-    End Get
-        Set(value As String)
-            _myotformat=value
+        End Get
+        Set
+            _myotformat = value
             OnPropertyChanged("MyOTFormat")
         End Set
     End Property
+
     Public Property MyFieldType as String
-    get
+        get
             return _myfieldtype
-    End Get
-        Set(value as String)
-            _myfieldtype=value
+        End Get
+        Set
+            _myfieldtype = value
             OnPropertyChanged("MyFieldType")
         End Set
     End Property
+
     Public Property MyPenalties As String
-    Get
+        Get
             Return _mypenalties
-    End Get
-        Set(value As String)
-            _mypenalties=value
+        End Get
+        Set
+            _mypenalties = value
             OnPropertyChanged("MyPenalties")
         End Set
     End Property
-    
-    Public  Property MyNumTeams As String
+
+    Public Property MyNumTeams As String
         Get
             Return _mynumteams
         End Get
-        Set(value As String)
-            _mynumteams=value
+        Set
+            _mynumteams = value
             OnPropertyChanged("MyNumTeams")
         End Set
     End Property
-       Public  Property MyNumConf As String
+
+    Public Property MyNumConf As String
         Get
             Return _mynumconf
         End Get
-        Set(value As String)
-            _mynumconf=value
+        Set
+            _mynumconf = value
             OnPropertyChanged("MyNumConf")
         End Set
     End Property
-       Public  Property MyNumDiv As String
+
+    Public Property MyNumDiv As String
         Get
             Return _mynumdiv
         End Get
-        Set(value As String)
-            _mynumdiv=value
+        Set
+            _mynumdiv = value
             OnPropertyChanged("MyNumDiv")
         End Set
     End Property
+
     Public Property MyFantasyDraft as Boolean
-    Get
+        Get
             return _myfantasydraft
-    End Get
-        Set(value as Boolean)
-            _myfantasydraft=value
+        End Get
+        Set
+            _myfantasydraft = value
             OnPropertyChanged("MyFantasyDraft")
         End Set
     End Property
+
     Public Property MyUserFired as Boolean
-    get
+        get
             return _myuserfired
-    End Get
-        Set(value as Boolean)
-            _myuserfired=value
+        End Get
+        Set
+            _myuserfired = value
             OnPropertyChanged("MyUserFired")
         End Set
     End Property
+
     Public Property MyAllowExpansion as Boolean
-    get
+        get
             return _myallowexpansion
-    End Get
-        Set(value as Boolean)
-            _myallowexpansion=value
+        End Get
+        Set
+            _myallowexpansion = value
             OnPropertyChanged("MyAllowExpansion")
         End Set
     End Property
+
     Public Property MyAllowRelocation As Boolean
-    Get
+        Get
             return _myallowrelocation
-    End Get
-        Set(value As Boolean)
-            _myallowrelocation=value
+        End Get
+        Set
+            _myallowrelocation = value
             OnPropertyChanged("MyAllowRelocation")
         End Set
     End Property
+
     Public Property MyAllowFA as Boolean
-    Get
+        Get
             return _myallowFA
-    End Get
-        Set(value as Boolean)
-            _myallowFA=value
+        End Get
+        Set
+            _myallowFA = value
             OnPropertyChanged("MyAllowFA")
         End Set
     End Property
+
     Public Property MyAllowDraft as Boolean
-    get
+        get
             return _myallowdraft
-    End Get
-        Set(value as Boolean)
-            _myallowdraft=value
+        End Get
+        Set
+            _myallowdraft = value
             OnPropertyChanged("MyAllowDraft")
         End Set
     End Property
+
     Public Property MyNumDraftRounds as String
-    get
+        get
             return _mynumdraftrounds
-    End Get
-        Set(value as String)
-            _mynumdraftrounds=value
+        End Get
+        Set
+            _mynumdraftrounds = value
             OnPropertyChanged("MyNumDraftRounds")
         End Set
     End Property
+
     Public Property AllowSuppDraft as Boolean
-    Get
+        Get
             return _allowsuppdraft
-    End Get
-        Set(value as Boolean)
-            _allowsuppdraft=value
+        End Get
+        Set
+            _allowsuppdraft = value
             OnPropertyChanged("AllowSuppDraft")
         End Set
     End Property
+
     Public Property CompPicksForFALoss As Boolean
-    Get
-           return _comppicksforfaloss
-    End Get
-        Set(value As Boolean)
-            _comppicksforfaloss=value
+        Get
+            return _comppicksforfaloss
+        End Get
+        Set
+            _comppicksforfaloss = value
             OnPropertyChanged("CompPicksForFALoss")
         End Set
-    End Property 
-    Public Property MyDepth as String
-    Get
-            return _mydepth(MyPosition)
-    End Get
-        Set(value as String)
-            _mydepth(MyPosition)=value
+    End Property
+
+    Public Property MyDepth as Integer
+        Get
+            return _mydepth(MyPosition).tostring("N0", CultureInfo.InvariantCulture)
+        End Get
+        Set
+            _mydepth(MyPosition) = value
             OnPropertyChanged("MyDepth")
         End Set
     End Property
-    Public Property MyBelowAvg As String
-    Get
-            return _mybelowavg(MyPosition)
-    End Get
-        Set(value As String)
-            _mybelowavg(MyPosition)=value
+
+    Public Property MyBelowAvg As Integer
+        Get
+            return _mybelowavg(MyPosition).tostring("N0", CultureInfo.InvariantCulture)
+        End Get
+        Set
+            _mybelowavg(MyPosition) = value
             OnPropertyChanged("MyBelowAvg")
         End Set
     End Property
-    Public Property MyAverage as String
-    Get
-            Return _myaverage(MyPosition)
-    End Get
-        Set(value as String)
-            _myaverage(MyPosition)=value
+
+    Public Property MyAverage as Integer
+        Get
+            Return _myaverage(MyPosition).tostring("N0", CultureInfo.InvariantCulture)
+        End Get
+        Set
+            _myaverage(MyPosition) = value
             OnPropertyChanged("MyAverage")
         End Set
     End Property
-    Public Property MyGood As String
-    Get
-            return _mygood(MyPosition)
-    End Get
-        Set(value As String)
-            _mygood(MyPosition)=value
+
+    Public Property MyGood As Integer
+        Get
+            return _mygood(MyPosition).tostring("N0", CultureInfo.InvariantCulture)
+        End Get
+        Set
+            _mygood(MyPosition) = value
             OnPropertyChanged("MyGood")
         End Set
     End Property
-    Public Property MyVeryGood as String
-    Get
-            return _myverygood(MyPosition)                      
-    End Get
-        Set(value as String)
-            _myverygood(MyPosition)=value
+
+    Public Property MyVeryGood as Integer
+        Get
+            return _myverygood(MyPosition).tostring("N0", CultureInfo.InvariantCulture)
+        End Get
+        Set
+            _myverygood(MyPosition) = value
             OnPropertyChanged("MyVeryGood")
         End Set
     End Property
-    
-Public Property MyFranchise As String
-    get
-            Return _myfranchise(MyPosition)
-    End Get
-    Set(value As String)
-            _myfranchise(MyPosition)=value
+
+    Public Property MyFranchise As Integer
+        get
+            Return _myfranchise(MyPosition).tostring("N0", CultureInfo.InvariantCulture)
+        End Get
+        Set
+            _myfranchise(MyPosition) = value
             OnPropertyChanged("MyFranchise")
-    End Set
-End Property
+        End Set
+    End Property
 
     Public Property MyPosition as Integer
-    Get
+        Get
             return _myposition
-    End Get
-        Set(value as Integer)
-            _myposition=value
+        End Get
+        Set
+            _myposition = value
             OnPropertyChanged("MyPosition")
         End Set
     End Property
 
-    Public Property MyVetMinContract as String
-    Get
-            return _myvetmincontract
-    End Get
-        Set(value as String)
-            _myvetmincontract=value
+    Public Property MyVetMinContract as Integer
+        Get
+            return _myvetmincontract.tostring("N0", CultureInfo.InvariantCulture)
+        End Get
+        Set
+            _myvetmincontract = value
             OnPropertyChanged("MyVetMinContract")
         End Set
     End Property
+
     Public Property MyVetMinNumYears as String
-    Get
+        Get
             Return _myvetminnumyears
-    End Get
-        Set(value as String)
-            _myvetminnumyears=value
+        End Get
+        Set
+            _myvetminnumyears = value
             OnPropertyChanged("MyVetMinNumYears")
         End Set
     End Property
+
     Public Property MyAllowLowerVetMin as Boolean
-    Get
+        Get
             return _myallowlowervetmin
-    End Get
-        Set(value as Boolean)
-            _myallowlowervetmin=value
+        End Get
+        Set
+            _myallowlowervetmin = value
             OnPropertyChanged("MyAllowLowerVetMin")
         End Set
     End Property
-    Public Property MyMinConValue as String
-    Get
-           return _myminconvalue(MyPosConMin)
-    End Get
-        Set(value as String)
-            _myminconvalue(MyPosConMin)=value
+
+    Public Property MyMinConValue as Integer
+        Get
+            return _myminconvalue(MyPosConMin).ToString("N0", CultureInfo.InvariantCulture)
+        End Get
+        Set
+            _myminconvalue(MyPosConMin) = value
             OnPropertyChanged("MyMinConValue")
         End Set
     End Property
-    Public  Property MyPosConMin As Integer
+
+    Public Property MyPosConMin As Integer
         Get
             Return _myposconmin
         End Get
-        set(value As integer)
-            _myposconmin=value
+        set
+            _myposconmin = value
             OnPropertyChanged("MyPosConMin")
         End Set
     End Property
-    
+
     Public Property MyShareMerchRev As Boolean
-    Get
+        Get
             return _mysharemerchrev
-    End Get
-        Set(value As Boolean)
-            _mysharemerchrev=value
+        End Get
+        Set
+            _mysharemerchrev = value
             OnPropertyChanged("MyShareMerchRev")
         End Set
     End Property
+
     Public Property MyShareLuxBoxRev as Boolean
-    Get
+        Get
             return _myshareluxboxrev
-    End Get
-        Set(value as Boolean)
-            _myshareluxboxrev=value
+        End Get
+        Set
+            _myshareluxboxrev = value
             OnPropertyChanged("MyShareLuxBoxRev")
         End Set
     End Property
-  Public Property MyLeagueSalCap As String
-    Get
-            return _myleaguesalcap
-    End Get
-      Set(value As String)
-            _myleaguesalcap=value
+
+    Public Property MyLeagueSalCap As Integer
+        Get
+            return _myleaguesalcap.ToString("N0", CultureInfo.InvariantCulture)
+        End Get
+        Set
+            _myleaguesalcap = value
             OnPropertyChanged("MyLeagueSalCap")
-      End Set
-  End Property
+        End Set
+    End Property
 
     Public Property MyHomeTeamGate as String
-    Get
+        Get
             return _myhometeamgate
-    End Get
-        Set(value as String)
-            _myhometeamgate=value
+        End Get
+        Set
+            _myhometeamgate = value
             OnPropertyChanged("MyHomeTeamGate")
         End Set
     End Property
+
     Public Property MyCapCarryOver as Boolean
-    Get
+        Get
             return _mycapcarryover
-    End Get
-        Set(value as Boolean)
-            _mycapcarryover=value
+        End Get
+        Set
+            _mycapcarryover = value
             OnPropertyChanged("MyCapCarryOver")
         End Set
     End Property
+
     Public Property MyRookiePool As Boolean
-    Get
+        Get
             return _myrookiepool
-    End Get
-        Set(value As Boolean)
-            _myrookiepool=value
+        End Get
+        Set
+            _myrookiepool = value
             OnPropertyChanged("MyRookiePool")
         End Set
     End Property
+
     Public Property MyAdjustCap as Boolean
-    Get
+        Get
             Return _myadjustcap
-    End Get
-        Set(value as Boolean)
-            _myadjustcap=value
+        End Get
+        Set
+            _myadjustcap = value
             OnPropertyChanged("MyAdjustCap")
         End Set
     End Property
+
     Public Property MyLuxuryTax as Boolean
-    Get
+        Get
             return _myluxurytax
-    End Get
-        Set(value as Boolean)
-            _myluxurytax=value
+        End Get
+        Set
+            _myluxurytax = value
             OnPropertyChanged("MyLuxuryTax")
         End Set
     End Property
+
     Public Property MySalCapType as String
-    Get
+        Get
             return _mysalcaptype
-    End Get
-        Set(value as String)
-            _mysalcaptype=value
+        End Get
+        Set
+            _mysalcaptype = value
             OnPropertyChanged("MySalCapType")
         End Set
     End Property
+
     Public Property MySalCap As Boolean
-    Get
+        Get
             return _mysalcap
-    End Get
-        Set(value As Boolean)
-            _mysalcap=value
+        End Get
+        Set
+            _mysalcap = value
             OnPropertyChanged("MySalCap")
         End Set
     End Property
-#End Region
 
+#End Region
 End Class

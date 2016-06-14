@@ -11,7 +11,7 @@
         mc:Ignorable="d">
     <Grid x:Name="LgSettingsGrid">
         <Grid.Background>
-            <ImageBrush x:Name="LgSettingsGridBG" Opacity="0.7" />
+            <ImageBrush ImageSource="{Binding Path=MyBackgroundImg}" Opacity="0.6" />
         </Grid.Background>
         <TabControl x:Name="LgSettingsTabControl"
                     Width="Auto"
@@ -86,6 +86,7 @@
                               Width="150"
                               Margin="120,-22,0,0"
                               HorizontalAlignment="Right"
+                              SelectedIndex="0"
                               Text="{Binding Path=MyLeagueRules,
                                              Mode=TwoWay}">
                         <ComboBoxItem Content="NFL Rules" Tag="NFL Rules" />
@@ -99,6 +100,7 @@
                               Height="Auto"
                               Margin="120,-22,0,0"
                               HorizontalAlignment="Right"
+                              SelectedIndex="0"
                               Text="{Binding Path=MyLeagueType,
                                              Mode=TwoWay}">
                         <ComboBoxItem x:Name="Career"
@@ -117,6 +119,7 @@
                               Height="Auto"
                               Margin="160,-22,0,0"
                               HorizontalAlignment="Right"
+                              SelectedIndex="7"
                               Text="{Binding Path=MyRosterSize,
                                              Mode=TwoWay}">
                         <ComboBoxItem Content="60" Tag="60" />
@@ -141,6 +144,7 @@
                               Height="Auto"
                               Margin="180,-22, 0, 0"
                               HorizontalAlignment="Right"
+                              SelectedIndex="7"
                               Text="{Binding Path=MyInactives,
                                              Mode=TwoWay}">
                         <ComboBoxItem Content="14" Tag="14" />
@@ -164,6 +168,7 @@
                               Width="130"
                               Margin="150,-22,0,0"
                               HorizontalAlignment="Right"
+                              SelectedIndex="8"
                               Text="{Binding Path=MyPracSquadSize,
                                              Mode=TwoWay}">
                         <ComboBoxItem Content="0" Tag="0" />
@@ -189,6 +194,7 @@
                               Height="Auto"
                               Margin="140,-22, 0, 0"
                               HorizontalAlignment="Right"
+                              SelectedIndex="2"
                               Text="{Binding Path=MyOTFormat,
                                              Mode=TwoWay}">
                         <ComboBoxItem Content="Sudden Death" Tag="Sudden Death" />
@@ -203,6 +209,7 @@
                               Width="100"
                               Margin="170,-20,0,0"
                               HorizontalAlignment="Right"
+                              SelectedIndex="0"
                               Text="{Binding Path=MyFieldType,
                                              Mode=TwoWay}">
                         <ComboBoxItem Content="NFL Field" Tag="NFL Field" />
@@ -442,10 +449,7 @@
                                       Tag="12" />
                         <ComboBoxItem HorizontalContentAlignment="Center"
                                       Content="13"
-                                      Tag="13" />
-                        <ComboBoxItem HorizontalContentAlignment="Center"
-                                      Content="14+"
-                                      Tag="14" />
+                                      Tag="13+" />
                     </ComboBox>
                     <TextBox x:Name="MinSal"
                              Width="120"

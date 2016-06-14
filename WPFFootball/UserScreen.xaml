@@ -50,9 +50,6 @@
             <RowDefinition Height="20*" />
             <RowDefinition Height="200*" />
         </Grid.RowDefinitions>
-        <Grid.Background>
-            <ImageBrush x:Name="GridBackground" Opacity="0.7" />
-        </Grid.Background>
         <Border x:Name="UserBorder"
                 Grid.ColumnSpan="5"
                 Opacity="0.7">
@@ -109,6 +106,31 @@
                 <MenuItem Header="" />
             </MenuItem>
         </Menu>
+        <Image Grid.Row="0"
+               Grid.Column="0"
+               Opacity="0.6"
+               Source="{Binding Path=Image1}"
+               Stretch="Fill" />
+        <Image Grid.Row="0"
+               Grid.Column="1"
+               Opacity="0.6"
+               Source="{Binding Path=Image2}"
+               Stretch="Fill" />
+        <Image Grid.Row="0"
+               Grid.Column="2"
+               Opacity="0.6"
+               Source="{Binding Path=Image3}"
+               Stretch="Fill" />
+        <Image Grid.Row="0"
+               Grid.Column="3"
+               Opacity="0.6"
+               Source="{Binding Path=Image4}"
+               Stretch="Fill" />
+        <Image Grid.Row="0"
+               Grid.Column="4"
+               Opacity="0.6"
+               Source="{Binding Path=Image5}"
+               Stretch="Fill" />
         <Border Grid.Row="1"
                 Grid.Column="0"
                 Style="{StaticResource MyHeaderBorder}">
