@@ -592,4 +592,120 @@
     <value>BillsWatkinsTaylor.jpg</value>
     <comment>BillsWatkinsTaylorJpg description</comment>
   </data>
+  <data name="DolphinsCelebrateJpg" xml:space="preserve">
+    <value>DolphinsCelebrate.Jpg</value>
+    <comment>DolphinsCelebrateJpg description</comment>
+  </data>
+  <data name="DolphinsGreatsJpg" xml:space="preserve">
+    <value>DolphinsGreats.Jpg</value>
+    <comment>DolphinsGreatsJpg description</comment>
+  </data>
+  <data name="DolphinsMillerJpg" xml:space="preserve">
+    <value>DolphinsMiller.Jpg</value>
+    <comment>DolphinsMillerJpg description</comment>
+  </data>
+  <data name="DolphinsPreSnapJpg" xml:space="preserve">
+    <value>DolphinsPreSnap.Jpg</value>
+    <comment>DolphinsPreSnapJpg description</comment>
+  </data>
+  <data name="DolphinsStadiumJpg" xml:space="preserve">
+    <value>DolphinsStadium.Jpg</value>
+    <comment>DolphinsStadiumJpg description</comment>
+  </data>
+  <data name="DolphinsTannehillJpg" xml:space="preserve">
+    <value>DolphinsTannehill.Jpg</value>
+    <comment>DolphinsTannehillJpg description</comment>
+  </data>
+  <data name="DolphinsTrainingCampJpg" xml:space="preserve">
+    <value>DolphinsTrainingCamp.Jpg</value>
+    <comment>DolphinsTrainingCampJpg description</comment>
+  </data>
+  <data name="JetsDeckerJpg" xml:space="preserve">
+    <value>JetsDecker.jpg</value>
+    <comment>JetsDeckerJpg description</comment>
+  </data>
+  <data name="JetsFansJpg" xml:space="preserve">
+    <value>JetsFans.jpg</value>
+    <comment>JetsFansJpg description</comment>
+  </data>
+  <data name="JetsIvoryJpg" xml:space="preserve">
+    <value>JetsIvory.jpg</value>
+    <comment>JetsIvoryJpg description</comment>
+  </data>
+  <data name="JetsMarshallJpg" xml:space="preserve">
+    <value>JetsMarshall.Jpg</value>
+    <comment>JetsMarshallJpg description</comment>
+  </data>
+  <data name="JetsOverPileJpg" xml:space="preserve">
+    <value>JetsOverPile.jpg</value>
+    <comment>JetsOverPileJpg description</comment>
+  </data>
+  <data name="JetsTouchdown2Jpg" xml:space="preserve">
+    <value>JetsTouchdown2.jpg</value>
+    <comment>JetsTouchdown2Jpg description</comment>
+  </data>
+  <data name="JetsTunnelJpg" xml:space="preserve">
+    <value>JetsTunnel.jpg</value>
+    <comment>JetsTunnelJpg description</comment>
+  </data>
+  <data name="JetsWallpaperJpg" xml:space="preserve">
+    <value>JetsWallpaper.jpg</value>
+    <comment>JetsWallpaperJpg description</comment>
+  </data>
+  <data name="PatriotsBelichickJpg" xml:space="preserve">
+    <value>PatriotsBelichick.jpg</value>
+    <comment>PatriotsBelichickJpg description</comment>
+  </data>
+  <data name="PatriotsBradyGronkJpg" xml:space="preserve">
+    <value>PatriotsBradyGronk.jpg</value>
+    <comment>PatriotsBradyGronkJpg description</comment>
+  </data>
+  <data name="PatriotsBradyJpg" xml:space="preserve">
+    <value>PatriotsBrady.jpg</value>
+    <comment>PatriotsBradyJpg description</comment>
+  </data>
+  <data name="PatriotsCelebrateJpg" xml:space="preserve">
+    <value>PatriotsCelebrate.jpg</value>
+    <comment>PatriotsCelebrateJpg description</comment>
+  </data>
+  <data name="PatriotsDefenseJpg" xml:space="preserve">
+    <value>PatriotsDefense.jpg</value>
+    <comment>PatriotsDefenseJpg description</comment>
+  </data>
+  <data name="PatriotsEdelmanJpg" xml:space="preserve">
+    <value>PatriotsEdelman.jpg</value>
+    <comment>PatriotsEdelmanJpg description</comment>
+  </data>
+  <data name="PatriotsFansJpg" xml:space="preserve">
+    <value>PatriotsFans.jpg</value>
+    <comment>PatriotsFansJpg description</comment>
+  </data>
+  <data name="PatriotsGreatsJpg" xml:space="preserve">
+    <value>PatriotsGreats.jpg</value>
+    <comment>PatriotsGreatsJpg description</comment>
+  </data>
+  <data name="PatriotsGronkJpg" xml:space="preserve">
+    <value>PatriotsGronk.jpg</value>
+    <comment>PatriotsGronkJpg description</comment>
+  </data>
+  <data name="PatriotsReceiversJpg" xml:space="preserve">
+    <value>PatriotsReceivers.jpg</value>
+    <comment>PatriotsReceiversJpg description</comment>
+  </data>
+  <data name="PatriotsSuperBowlJpg" xml:space="preserve">
+    <value>PatriotsSuperBowl.jpg</value>
+    <comment>PatriotsSuperBowlJpg description</comment>
+  </data>
+  <data name="PatriotsTunnelJpg" xml:space="preserve">
+    <value>PatriotsTunnel.jpg</value>
+    <comment>PatriotsTunnelJpg description</comment>
+  </data>
+  <data name="NFLWallpaperJpg" xml:space="preserve">
+    <value>NFLWallpaper.jpg</value>
+    <comment>NFLWallpaperJpg description</comment>
+  </data>
+  <data name="NFLWallpaper2Jpg" xml:space="preserve">
+    <value>NFLWallpaper2.jpg</value>
+    <comment>NFLWallpaper2Jpg description</comment>
+  </data>
 </root>

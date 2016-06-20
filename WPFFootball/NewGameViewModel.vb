@@ -39,7 +39,7 @@ Public Class NewGameViewModel
     private _myavgattendance as string
     private _myteamrecord as string
     private _mybackgroundimg as imagesource
-    private MyDT as New ObservableCollection(Of DataTable)
+    private _MyDT as New ObservableCollection(Of DataTable)
 
 #End Region
 
@@ -87,10 +87,10 @@ Public Class NewGameViewModel
 
     Public Property MyDTProperty As ObservableCollection(Of DataTable)
         Get
-            Return MyDT
+            Return _MyDT
         End Get
         Set
-            MyDT = value
+            _MyDT = value
             OnPropertyChanged("MyDTProperty")
         End Set
     End Property

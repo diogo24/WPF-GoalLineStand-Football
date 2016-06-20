@@ -80,14 +80,18 @@
                           Header="_Exit GLS" />
             </MenuItem>
             <MenuItem Header="_Game">
-                <MenuItem Header="_Home Screen" />
+                <MenuItem x:Name="LgHm"
+                          Click="LgHm_Click"
+                          Header="_League Home" />
                 <MenuItem Header="_League News" />
                 <MenuItem Header="_League Scores" />
                 <MenuItem Header="_League Schedule" />
                 <MenuItem Header="_League History" />
                 <MenuItem Header="_League Almanac" />
                 <Separator />
-                <MenuItem Click="MenuItem_OnClick" Header="_League Settings" />
+                <MenuItem x:Name="LgSet"
+                          Click="LgSet_OnClick"
+                          Header="_League Settings" />
             </MenuItem>
             <MenuItem Header="_Head Coach">
                 <MenuItem Header="_Game Plans" />
@@ -108,29 +112,31 @@
         </Menu>
         <Image Grid.Row="0"
                Grid.Column="0"
-               Opacity="0.6"
+               Margin="0,18,0,0"
+               Opacity="0.4"
                Source="{Binding Path=Image1}"
                Stretch="Fill" />
         <Image Grid.Row="0"
                Grid.Column="1"
-               Opacity="0.6"
+               Opacity="0.4"
                Source="{Binding Path=Image2}"
                Stretch="Fill" />
         <Image Grid.Row="0"
                Grid.Column="2"
-               Opacity="0.6"
+               Opacity="0.4"
                Source="{Binding Path=Image3}"
                Stretch="Fill" />
         <Image Grid.Row="0"
                Grid.Column="3"
-               Opacity="0.6"
+               Opacity="0.4"
                Source="{Binding Path=Image4}"
                Stretch="Fill" />
         <Image Grid.Row="0"
                Grid.Column="4"
-               Opacity="0.6"
+               Opacity="0.4"
                Source="{Binding Path=Image5}"
                Stretch="Fill" />
+
         <Border Grid.Row="1"
                 Grid.Column="0"
                 Style="{StaticResource MyHeaderBorder}">

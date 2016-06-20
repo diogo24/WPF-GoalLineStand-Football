@@ -11,6 +11,7 @@ Public Class GameSettings
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
+
         _myTeam = TeamID
         DataContext=MyVM        
         MyVM.MyBackgroundImg = New BitmapImage(New Uri(NewGameViewModel.GetBackgroundFilePath(TeamID),
@@ -29,7 +30,20 @@ Public Class GameSettings
         GetWindow(userTeam)
         close
     End Sub
+    Private Function InitValues(tempstring As string) As string    
+        return tempstring.Substring(tempstring.LastIndexOf("=")+1)
+    End Function
+    Private Function ResetValues(tempstring As string) As string
+        if tempstring.Contains("=") Then
+            Return tempstring.Substring(0,tempstring.LastIndexOf("="))
+        Else 
+            Return Nothing
+        end If 
 
+    End Function
+    ''' <summary>
+    ''' Loads settings from file
+    ''' </summary>
     Private Sub LoadSettings
         if _doOnce = False
             dim i as integer
@@ -194,18 +208,6 @@ Public Class GameSettings
             end using
         end if
     End Sub
-    private Function InitValues(tempstring As string) As string    
-        return tempstring.Substring(tempstring.LastIndexOf("=")+1)
-    End Function
-    private Function ResetValues(tempstring As string) As string
-        if tempstring.Contains("=") Then
-            Return tempstring.Substring(0,tempstring.LastIndexOf("="))
-        Else 
-            Return Nothing
-        end If 
-
-    End Function
-
     ''' <summary>
     '''     Writes changes to settings file
     ''' </summary>

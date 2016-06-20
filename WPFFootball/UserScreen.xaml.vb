@@ -52,8 +52,7 @@ Public Class UserScreen
             myRand.NextUInt()
             if dictEntry.Key.ToString().StartsWith(teamNick) then
                 myList.Add(dictEntry.key)
-            end if
-              
+            end if             
         Next dictEntry
 
         return myList
@@ -96,10 +95,17 @@ Public Class UserScreen
         End If
     End Sub
 
-    Private Sub MenuItem_OnClick(sender As Object, e As RoutedEventArgs)
+    Private Sub LGSet_OnClick(sender As Object, e As RoutedEventArgs)
         dim mySettings as new GameSettings(myTeam)
         mysettings.Show()
         GetWindow(mysettings)
+        Close
+    End Sub
+
+    Private Sub LgHm_Click(sender As Object, e As RoutedEventArgs)
+        dim LeagueHm as New LeagueHome
+        LeagueHm.Show()
+        GetWindow(LeagueHm)
         Close
     End Sub
 End Class

@@ -110,6 +110,10 @@
       <DependentUpon>GameSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="GameSettingsViewModel.vb" />
+    <Compile Include="LeagueHome.xaml.vb">
+      <DependentUpon>LeagueHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LeagueHomeViewModel.vb" />
     <Compile Include="NewGameViewModel.vb" />
     <Compile Include="HomeScreen.xaml.vb">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
@@ -126,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HomeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LeagueHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -242,6 +250,8 @@
     <Resource Include="Project Files\PatriotsReceivers.jpg" />
     <Resource Include="Project Files\PatriotsSuperBowl.jpg" />
     <Resource Include="Project Files\PatriotsTunnel.jpg" />
+    <Resource Include="Project Files\NFLWallpaper.jpg" />
+    <Resource Include="Project Files\NFLWallpaper2.jpg" />
     <Content Include="Project Files\Schedule4GamesMax.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

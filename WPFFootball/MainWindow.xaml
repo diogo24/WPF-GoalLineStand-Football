@@ -13,7 +13,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="footballfield.jpg" Opacity="0.8" />
         </Grid.Background>
-        <TextBlock x:Name="Title"
+        <TextBlock x:Name="LgTitle"
                    Width="Auto"
                    Height="Auto"
                    HorizontalAlignment="Center"

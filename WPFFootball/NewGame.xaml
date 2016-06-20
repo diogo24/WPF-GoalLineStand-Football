@@ -213,6 +213,7 @@
                           ItemsSource="{Binding Path=MyDTProperty[0]}"
                           Opacity="0.8"
                           RowBackground="{Binding Path=MySecColor}"
+                          RowHeight="25"
                           VerticalScrollBarVisibility="Visible"
                           Visibility="Hidden">
                     <DataGrid.ColumnHeaderStyle>
