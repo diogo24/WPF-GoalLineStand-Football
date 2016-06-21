@@ -295,7 +295,7 @@
     <Resource Include="Project Files\footballfield.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SQLFunctions\SQLFunctions\SQLFunctions.vbproj">
+    <ProjectReference Include="..\SQLFunctions\SQLFunctions.vbproj">
       <Project>{5a4a94c5-fc1d-4301-a83f-810d1961f4ba}</Project>
       <Name>SQLFunctions</Name>
     </ProjectReference>
